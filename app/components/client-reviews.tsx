@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ClientReviews = () => {
   return (
-    <div className="flex flex-col items-center w-full h-screen px-4 mt-20">
+    <div className="flex flex-col items-center w-full min-h-screen px-4 mt-20">
       <div className="w-full flex flex-row items-center">
         <p className="text-3xl sm:text-4xl font-semibold">Client Reviews</p>
         <div className="flex-grow h-[1px] bg-black ml-5" />
