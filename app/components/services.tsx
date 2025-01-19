@@ -16,7 +16,7 @@ const Services = () => {
       <Accordion type="single" collapsible className="w-full mt-8">
         <AccordionItem value="item-1">
           <AccordionTrigger>
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-start">
               <div>
                 <Image
                   src={"/financial-management.png"}
@@ -26,7 +26,9 @@ const Services = () => {
                   priority
                 />
               </div>
-              <p className="ml-4 font-semibold text-lg">Financial Management</p>
+              <p className="ml-4 font-semibold text-lg text-start">
+                Financial Management
+              </p>
             </div>
           </AccordionTrigger>
           <AccordionContent>
@@ -36,7 +38,7 @@ const Services = () => {
         </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger>
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-start">
               <div>
                 <Image
                   src={"/project-management.png"}
@@ -46,7 +48,9 @@ const Services = () => {
                   priority
                 />
               </div>
-              <p className="ml-4 font-semibold text-lg">Project Management</p>
+              <p className="ml-4 font-semibold text-lg text-start">
+                Project Management
+              </p>
             </div>
           </AccordionTrigger>
           <AccordionContent>
@@ -56,7 +60,7 @@ const Services = () => {
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger>
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-start">
               <div>
                 <Image
                   src={"/administrative-support.png"}
@@ -66,7 +70,7 @@ const Services = () => {
                   priority
                 />
               </div>
-              <p className="ml-4 font-semibold text-lg">
+              <p className="ml-4 font-semibold text-lg text-start">
                 Administrative Support
               </p>
             </div>
@@ -78,7 +82,7 @@ const Services = () => {
         </AccordionItem>
         <AccordionItem value="item-4">
           <AccordionTrigger>
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-start">
               <div>
                 <Image
                   src={"/personal-coaching.png"}
@@ -88,7 +92,7 @@ const Services = () => {
                   priority
                 />
               </div>
-              <p className="ml-4 font-semibold text-lg">
+              <p className="ml-4 font-semibold text-lg text-start">
                 Personal Coaching and Mentoring
               </p>
             </div>
