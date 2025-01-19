@@ -25,13 +25,16 @@ const Intro = () => {
         </p>
       </div>
       <div className="relative mt-24">
-        <Image
-          src={"/intro.png"}
-          alt="Potrait Picture"
-          width={280}
-          height={320}
-          className="relative"
-        />
+        <div className="w-2/3 sm:w-1/2 md:w-3/5 lg:w-3/6">
+          <Image
+            src={"/intro.png"}
+            alt="Potrait Picture"
+            layout="responsive"
+            width={280}
+            height={320}
+            className="relative object-cover"
+          />
+        </div>
         <p className="absolute top-0 w-60 right-0 text-end mr-4 font-semibold text-base sm:text-lg">
           My goal is to provide you with reliable support that drives efficiency
           and productivity.
