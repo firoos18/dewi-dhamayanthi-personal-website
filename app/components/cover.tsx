@@ -3,7 +3,7 @@ import Image from "next/image";
 const Cover = () => {
   return (
     <div className="lg:relative flex flex-col items-center justify-center w-full h-screen px-4">
-      <div className="absolute bottom-0 left-0 w-full h-1/2">
+      <div className="absolute bottom-0 left-0 w-full h-2/3">
         <Image
           className="object-fit"
           src={"/cover-lg-bg.png"}
