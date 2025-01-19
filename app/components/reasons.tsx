@@ -71,7 +71,12 @@ const Reasons = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row w-full mt-24 justify-center">
+        <p className="mt-20 text-center text-lg sm:text-xl font-semibold leading-tight">
+          Let’s work together to make your business more organized, efficient,
+          and successful. Contact me today to discuss how I can support your
+          business!
+        </p>
+        <div className="flex flex-row w-full mt-10 justify-center">
           <button className="flex flex-row rounded-full bg-primary text-secondary font-semibold py-4 px-5 justify-center items-center">
             <Image
               src={"/email-push.png"}
