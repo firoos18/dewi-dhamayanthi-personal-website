@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="relative flex flex-col w-full min-h-72 mt-20 px-4 justify-center">
+    <div className="relative flex flex-col w-full min-h-96 mt-14 px-4 justify-center">
       <Image
         className="absolute inset-0 object-cover"
         src={"/footer-bg.png"}

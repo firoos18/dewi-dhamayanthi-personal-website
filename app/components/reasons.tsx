@@ -16,7 +16,7 @@ const Reasons = () => {
           <p className="text-3xl sm:text-4xl font-semibold">Why Work With Me</p>
           <div className="flex-grow h-[1px] bg-black ml-5" />
         </div>
-        <div className="flex flex-col mt-4 h-fit space-y-4">
+        <div className="flex flex-col mt-12 h-fit space-y-4">
           <div className="bg-[#F8F7F2] p-4 rounded-[16px]">
             <div className="flex flex-row items-center">
               <Image
@@ -71,7 +71,7 @@ const Reasons = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row w-full mt-8 justify-center">
+        <div className="flex flex-row w-full mt-24 justify-center">
           <button className="flex flex-row rounded-full bg-primary text-secondary font-semibold py-4 px-5 justify-center items-center">
             <Image
               src={"/email-push.png"}

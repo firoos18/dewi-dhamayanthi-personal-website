@@ -4,10 +4,10 @@ const ClientReviews = () => {
   return (
     <div className="flex flex-col items-center w-full h-screen px-4 mt-20">
       <div className="w-full flex flex-row items-center">
-        <p className="text-3xl sm:text-4xl font-semibold">Why Work With Me</p>
+        <p className="text-3xl sm:text-4xl font-semibold">Client Reviews</p>
         <div className="flex-grow h-[1px] bg-black ml-5" />
       </div>
-      <div className="flex flex-col h-fit mt-4 space-y-4">
+      <div className="flex flex-col h-fit mt-12 space-y-4">
         <div className="bg-[#B1C0C066] p-4 rounded-[16px]">
           <p className="text-[#6A6A6A] text-base sm:text-lg">
             “Working with Dewi has been a transformative experience for my

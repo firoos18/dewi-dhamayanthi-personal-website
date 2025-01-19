@@ -3,10 +3,10 @@ import Image from "next/image";
 const Cover = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen px-4">
-      <p className="bg-gradient-to-r from-[#0B414B] to-[#1A99B1] bg-clip-text text-transparent text-4xl sm:text-5xl font-semibold w-[400px] text-center">
+      <p className="bg-gradient-to-r from-[#0B414B] to-[#1A99B1] bg-clip-text text-transparent text-5xl sm:text-6xl font-semibold w-[400px] text-center">
         Empowering Your Success.
       </p>
-      <p className="w-[310px] text-center mt-2 text-base sm:text-lg text-black">
+      <p className="w-[310px] text-center mt-2 text-lg sm:text-xl text-black">
         Achieve Financial Goals and Build Your Dream Business
       </p>
       <div className="flex flex-row w-full mt-8 justify-center">

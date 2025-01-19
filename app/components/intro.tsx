@@ -35,7 +35,7 @@ const Intro = () => {
             className="relative object-cover"
           />
         </div>
-        <p className="absolute top-0 w-60 right-0 text-end mr-4 font-semibold text-base sm:text-lg">
+        <p className="absolute top-6 w-72 right-0 text-end mr-4 font-semibold text-2xl sm:text-3xls">
           My goal is to provide you with reliable support that drives efficiency
           and productivity.
         </p>
