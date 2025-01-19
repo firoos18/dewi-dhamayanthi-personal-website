@@ -1,5 +1,6 @@
 import Cover from "./components/cover";
 import Intro from "./components/intro";
+import Reasons from "./components/reasons";
 import Services from "./components/services";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Cover />
       <Intro />
       <Services />
+      <Reasons />
     </>
   );
 }
