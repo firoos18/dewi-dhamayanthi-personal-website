@@ -15,13 +15,11 @@ const Intro = () => {
         <p className="text-2xl sm:text-4xl w-[220px] font-semibold">
           Hi! I’m Dewi Dhamayanthi.
         </p>
-        <p className="mt-4 ext-lg sm:text-xl">
-          A dedicated <b>Virtual Assistant</b> specializing in{" "}
+        <p className="mt-4 text-base sm:text-xl">
+          A <b>Finance</b> and <b>Business Expert</b> specializing in{" "}
           <b>financial management</b> and <b>project coordination</b>. I help
-          business owners and entrepreneurs streamline their operations,
-          optimize their financial processes, and successfully manage their
-          projects, allowing them to focus on what they do best, growing their
-          businesses.
+          entrepreneurs streamline operations, optimize finances, and manage
+          projects, so they can focus on growing their businesses.
         </p>
       </div>
       <div className="relative mt-24">
@@ -35,9 +33,9 @@ const Intro = () => {
             className="relative object-cover"
           />
         </div>
-        <p className="absolute top-6 w-72 right-0 text-end mr-4 font-semibold text-2xl sm:text-3xls">
-          My goal is to provide you with reliable support that drives efficiency
-          and productivity.
+        <p className="absolute top-0 w-64 right-0 text-end mr-4 font-semibold text-base sm:text-lg">
+          My goal is to provide you with reliable support that drive growth and
+          achieve <br /> financial goals.
         </p>
       </div>
     </div>
