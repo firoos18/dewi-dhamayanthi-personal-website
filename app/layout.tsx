@@ -25,7 +25,7 @@ export default function RootLayout({
         className={`${poppins.variable} antialiased min-h-screen overflow-y-auto`}
       >
         <TopBar />
-        <div className="relative">{children}</div>
+        <div className="relative text-black">{children}</div>
       </body>
     </html>
   );
