@@ -10,9 +10,11 @@ export default function Home() {
     <>
       <Cover />
       <Intro />
-      <Services />
-      <Reasons />
-      <ClientReviews />
+      <div className="block lg:hidden">
+        <Services />
+        <Reasons />
+        <ClientReviews />
+      </div>
       <Footer />
     </>
   );

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Services = () => {
   return (
-    <div className="min-h-fit mt-9 px-4 flex flex-col">
+    <div className="relative min-h-fit mt-9 px-4 flex flex-col">
       <div className="w-full flex flex-row items-center">
         <p className="text-3xl sm:text-4xl font-semibold">Services I Offer</p>
         <div className="flex-grow h-[1px] bg-black ml-5" />
