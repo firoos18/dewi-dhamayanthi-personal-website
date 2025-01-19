@@ -49,7 +49,7 @@ const Services = () => {
                 />
               </div>
               <p className="ml-4 font-semibold text-lg text-start">
-                Project Management
+                Project Coordination
               </p>
             </div>
           </AccordionTrigger>
@@ -63,7 +63,7 @@ const Services = () => {
             <div className="flex flex-row justify-start">
               <div>
                 <Image
-                  src={"/administrative-support.png"}
+                  src={"/business-support.png"}
                   alt="financial management icon"
                   width={24}
                   height={24}
@@ -71,37 +71,13 @@ const Services = () => {
                 />
               </div>
               <p className="ml-4 font-semibold text-lg text-start">
-                Administrative Support
+                Business Support
               </p>
             </div>
           </AccordionTrigger>
           <AccordionContent>
             Offering a range of administrative services to help you stay
             organized, from calendar management to email correspondence.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-4">
-          <AccordionTrigger>
-            <div className="flex flex-row justify-start">
-              <div>
-                <Image
-                  src={"/personal-coaching.png"}
-                  alt="financial management icon"
-                  width={24}
-                  height={24}
-                  priority
-                />
-              </div>
-              <p className="ml-4 font-semibold text-lg text-start">
-                Personal Coaching and Mentoring
-              </p>
-            </div>
-          </AccordionTrigger>
-          <AccordionContent>
-            I’m passionate about helping individuals gain financial clarity,
-            build essential skills, and grow their careers with confidence and
-            purpose through personalized coaching in finance, bookkeeping, and
-            career development.
           </AccordionContent>
         </AccordionItem>
       </Accordion>
