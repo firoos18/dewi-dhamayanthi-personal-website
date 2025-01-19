@@ -17,7 +17,7 @@ const TopBar = () => {
   }, []);
   return (
     <div
-      className={`w-full h-fit p-4 text-primary text-lg font-bold leading-tight sticky top-0 ${
+      className={`w-full h-fit p-4 text-primary text-lg lg:text-2xl font-bold leading-tight sticky top-0 ${
         isScrolled ? "shadow-top-bar" : "shadow-sm"
       } transition-shadow duration-300 bg-background z-50`}
     >
