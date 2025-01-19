@@ -8,13 +8,13 @@ const Cover = () => {
         Achieve your financial goals and build your dream business.
       </p>
       <div className="flex flex-row w-full mt-8 justify-center">
-        <div className="flex flex-row rounded-full bg-primary text-secondary py-4 px-5 justify-center">
+        <button className="flex flex-row rounded-full bg-primary text-secondary py-4 px-5 justify-center">
           <p>Contact Me</p>
-        </div>
+        </button>
         <div className="mx-4" />
-        <div className="flex flex-row rounded-full bg-primary text-secondary py-4 px-5 justify-center">
+        <button className="flex flex-row rounded-full bg-primary text-secondary py-4 px-5 justify-center">
           <p>Contact Me</p>
-        </div>
+        </button>
       </div>
     </div>
   );
