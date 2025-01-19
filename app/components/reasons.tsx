@@ -16,7 +16,7 @@ const Reasons = () => {
           <p className="text-3xl sm:text-4xl font-semibold">Why Work With Me</p>
           <div className="flex-grow h-[1px] bg-black ml-5" />
         </div>
-        <div className="flex flex-col mt-4 h-[564px] justify-evenly">
+        <div className="flex flex-col mt-4 h-fit space-y-4">
           <div className="bg-[#F8F7F2] p-4 rounded-[16px]">
             <div className="flex flex-row items-center">
               <Image
