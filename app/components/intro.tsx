@@ -21,7 +21,7 @@ const Intro = () => {
       />
       <div className="px-4 lg:px-20 lg:mt-25 relative z-10 flex flex-col">
         <p className="text-2xl sm:text-4xl lg:text-6xl w-[220px] lg:w-[440px] font-semibold">
-          Hi! I’m Dewi Dhamayanthi.
+          Hi! I’m Dewi.
         </p>
         <p className="mt-4 text-base sm:text-xl lg:text-4xl lg:leading-relaxed lg:mt-12">
           A <b>Finance</b> and <b>Business Expert</b> specializing in{" "}
