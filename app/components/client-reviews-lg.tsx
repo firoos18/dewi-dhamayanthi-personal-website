@@ -50,9 +50,9 @@ const ClientReviewsLg = () => {
           <div className="flex-grow h-[1px] bg-black ml-5" />
         </div>
         <Carousel className="mt-12">
-          <CarouselContent className="space-x-10">
+          <CarouselContent className="space-x-6">
             <CarouselItem className="basis-1/3">
-              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-[600px]">
+              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-full">
                 <p className="lg:text-2xl text-[#6A6A6A]">
                   “Working with Dewi has been a transformative experience for my
                   business! Her financial management skills have completely
@@ -81,7 +81,7 @@ const ClientReviewsLg = () => {
               </div>
             </CarouselItem>
             <CarouselItem className="basis-1/3">
-              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-[600px]">
+              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-full">
                 <p className="lg:text-2xl text-[#6A6A6A]">
                   “Working with Dewi has been a transformative experience for my
                   business! Her financial management skills have completely
@@ -110,7 +110,7 @@ const ClientReviewsLg = () => {
               </div>
             </CarouselItem>
             <CarouselItem className="basis-1/3">
-              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-[600px]">
+              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-full">
                 <p className="lg:text-2xl text-[#6A6A6A]">
                   “Working with Dewi has been a transformative experience for my
                   business! Her financial management skills have completely
@@ -139,7 +139,7 @@ const ClientReviewsLg = () => {
               </div>
             </CarouselItem>
             <CarouselItem className="basis-1/3">
-              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-[600px]">
+              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-full">
                 <p className="lg:text-2xl text-[#6A6A6A]">
                   “Working with Dewi has been a transformative experience for my
                   business! Her financial management skills have completely
@@ -168,7 +168,7 @@ const ClientReviewsLg = () => {
               </div>
             </CarouselItem>
             <CarouselItem className="basis-1/3">
-              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-[600px]">
+              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-full">
                 <p className="lg:text-2xl text-[#6A6A6A]">
                   “Working with Dewi has been a transformative experience for my
                   business! Her financial management skills have completely
@@ -197,7 +197,7 @@ const ClientReviewsLg = () => {
               </div>
             </CarouselItem>
             <CarouselItem className="basis-1/3">
-              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-[600px]">
+              <div className="flex flex-col p-7 rounded-[16px] bg-[#E0E6E6] w-full">
                 <p className="lg:text-2xl text-[#6A6A6A]">
                   “Working with Dewi has been a transformative experience for my
                   business! Her financial management skills have completely
