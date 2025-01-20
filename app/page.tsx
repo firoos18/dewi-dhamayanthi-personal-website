@@ -3,6 +3,7 @@ import Cover from "./components/cover";
 import Footer from "./components/footer";
 import Intro from "./components/intro";
 import Reasons from "./components/reasons";
+import ServiceReasons from "./components/service-reasons";
 import Services from "./components/services";
 
 export default function Home() {
@@ -14,6 +15,9 @@ export default function Home() {
         <Services />
         <Reasons />
         <ClientReviews />
+      </div>
+      <div className="hidden lg:block">
+        <ServiceReasons />
       </div>
       <Footer />
     </>
