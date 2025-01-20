@@ -1,4 +1,5 @@
 import ClientReviews from "./components/client-reviews";
+import ClientReviewsLg from "./components/client-reviews-lg";
 import Cover from "./components/cover";
 import Footer from "./components/footer";
 import Intro from "./components/intro";
@@ -18,6 +19,7 @@ export default function Home() {
       </div>
       <div className="hidden lg:block">
         <ServiceReasons />
+        <ClientReviewsLg />
       </div>
       <Footer />
     </>
