@@ -1,5 +1,4 @@
 import Image from "next/image";
-import CustomChevronDown from "./chevron-down";
 import ServicesItem from "./services-item";
 
 const ServiceReasons = () => {
