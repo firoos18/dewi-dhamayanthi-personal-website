@@ -17,12 +17,19 @@ const TopBar = () => {
   }, []);
   return (
     <div
-      className={`w-full h-fit p-4 text-primary text-lg lg:text-2xl font-bold leading-tight sticky top-0 ${
+      className={`w-full h-fit p-4 text-primary text-lg lg:text-xl font-bold leading-tight sticky top-0 ${
         isScrolled ? "shadow-top-bar" : "shadow-sm"
-      } transition-shadow duration-300 bg-background z-50`}
+      } transition-shadow duration-300 bg-background z-50 flex flex-row justify-between items-center`}
     >
-      <p>Dewi</p>
-      <p>Dhayamanthi.</p>
+      <div className="flex flex-col">
+        <p>Dewi</p>
+        <p>Dhayamanthi.</p>
+      </div>
+      <div className="hidden lg:flex flex-row lg:text-xl font-normal space-x-10">
+        <button>Blog</button>
+        <button>Ebook</button>
+        <button>Contact</button>
+      </div>
     </div>
   );
 };
