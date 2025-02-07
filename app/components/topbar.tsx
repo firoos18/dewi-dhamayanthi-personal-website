@@ -21,13 +21,13 @@ const TopBar = () => {
         isScrolled ? "shadow-top-bar" : "shadow-sm"
       } transition-shadow duration-300 bg-background z-50 flex flex-row justify-between items-center`}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col -space-y-1">
         <p>Dewi</p>
         <p>Dhayamanthi.</p>
       </div>
-      <div className="hidden lg:flex flex-row lg:text-xl font-normal space-x-10">
+      <div className="hidden lg:flex flex-row lg:text-lg font-normal space-x-10 mr-10">
         <button>Blog</button>
-        <button>Ebook</button>
+        <button>E-Book</button>
         <button>Contact</button>
       </div>
     </div>
