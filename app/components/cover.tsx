@@ -14,37 +14,64 @@ const Cover = () => {
       </div>
       <div className="lg:relative z-10">
         <div className="flex flex-col items-center">
-          <p className="bg-gradient-to-r from-[#0B414B] to-[#1A99B1] bg-clip-text text-transparent text-5xl sm:text-6xl lg:text-9xl font-semibold w-[400px] lg:w-[1000px] text-center">
+          <p className="bg-gradient-to-r from-[#0B414B] to-[#1A99B1] bg-clip-text text-transparent text-5xl sm:text-6xl lg:text-7xl font-semibold w-[400px] lg:w-[1000px] text-center lg:h-20">
             Empowering Your Success.
           </p>
-          <p className="w-[310px] lg:w-[800px] text-center mt-2 lg:mt-4 text-lg sm:text-xl lg:text-4xl text-black">
+          <p className="w-[310px] lg:w-[550px] text-center mt-4 lg:mt-4 text-lg sm:text-xl lg:text-2xl text-black">
             Achieve Financial Goals and Build Your Dream Business
           </p>
-        </div>
-        <div className="flex flex-row w-full mt-8 lg:mt-10 justify-center">
-          <button className="flex flex-row rounded-full bg-primary text-secondary font-semibold py-4 px-5 justify-center items-center">
+          <p className="mt-10 lg:text-2xl font-semibold">Are You...</p>
+          <div className="relative flex flex-col">
             <Image
-              src={"/email-push.png"}
-              alt="email-placeholder"
-              width={24}
-              height={24}
-              className="lg:w-8 lg:h-8"
-              priority
+              width={300}
+              height={450}
+              alt="figure"
+              src={"/figure.png"}
+              className="relative z-10"
             />
-            <p className="ml-3 text-xs sm:text-base lg:text-xl">Contact Me</p>
-          </button>
-          <div className="mx-4" />
-          <button className="flex flex-row rounded-full bg-primary text-secondary font-semibold py-4 px-5 justify-center items-center">
-            <Image
-              src={"/phone-telephone.png"}
-              alt="email-placeholder"
-              width={24}
-              height={24}
-              className="lg:w-8 lg:h-8"
-              priority
-            />
-            <p className="ml-3 text-xs sm:text-base lg:text-xl">Book a Call</p>
-          </button>
+            <div className="absolute z-10 w-full flex flex-col items-center">
+              <div className="absolute left-[-300px] top-[20px]">
+                <Image
+                  width={350}
+                  height={80}
+                  alt="chat-bubbles-1"
+                  src={"/small-bussiness.png"}
+                />
+              </div>
+              <div className="absolute left-[-400px] top-[150px]">
+                <Image
+                  width={220}
+                  height={50}
+                  alt="chat-bubbles-2"
+                  src={"/mompreneurs.png"}
+                />
+              </div>
+              <div className="absolute left-[-200px] top-[330px]">
+                <Image
+                  width={320}
+                  height={50}
+                  alt="chat-bubbles-3"
+                  src={"/female-solopreneurs.png"}
+                />
+              </div>
+              <div className="absolute right-[-400px] top-[100px]">
+                <Image
+                  width={270}
+                  height={50}
+                  alt="chat-bubbles-3"
+                  src={"/mom-transitioning.png"}
+                />
+              </div>
+              <div className="absolute right-[-240px] top-[270px]">
+                <Image
+                  width={300}
+                  height={50}
+                  alt="chat-bubbles-3"
+                  src={"/women-who.png"}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
