@@ -1,78 +1,71 @@
 import Image from "next/image";
+import CoverItems from "./cover-items";
 
 const Cover = () => {
   return (
-    <div className="lg:relative flex flex-col items-center justify-center w-full h-screen px-4">
-      <div className="absolute hidden lg:block bottom-0 left-0 w-full h-2/3">
+    <div className="h-[880px] w-full px-6 pb-6 pt-8">
+      <div className="relative h-full w-full">
         <Image
-          className="object-fit"
-          src={"/cover-lg-bg.png"}
-          alt="background"
+          src={"/cover-bg.png"}
+          alt="Background"
           fill
           priority
+          style={{ borderRadius: "16px" }}
         />
-      </div>
-      <div className="lg:relative z-10">
-        <div className="flex flex-col items-center">
-          <p className="bg-gradient-to-r from-[#0B414B] to-[#1A99B1] bg-clip-text text-transparent text-5xl sm:text-6xl lg:text-7xl font-semibold w-[400px] lg:w-[1000px] text-center lg:h-20">
-            Empowering Your Success.
-          </p>
-          <p className="w-[310px] lg:w-[550px] text-center mt-4 lg:mt-4 text-lg sm:text-xl lg:text-2xl text-black">
-            Achieve Financial Goals and Build Your Dream Business
-          </p>
-          <p className="mt-10 lg:text-2xl font-semibold">Are You...</p>
-          <div className="relative flex flex-col">
-            <Image
-              width={300}
-              height={450}
-              alt="figure"
-              src={"/figure.png"}
-              className="relative z-10"
-            />
-            <div className="absolute z-10 w-full flex flex-col items-center">
-              <div className="absolute left-[-300px] top-[20px]">
-                <Image
-                  width={350}
-                  height={80}
-                  alt="chat-bubbles-1"
-                  src={"/small-bussiness.png"}
-                />
-              </div>
-              <div className="absolute left-[-400px] top-[150px]">
-                <Image
-                  width={220}
-                  height={50}
-                  alt="chat-bubbles-2"
-                  src={"/mompreneurs.png"}
-                />
-              </div>
-              <div className="absolute left-[-200px] top-[330px]">
-                <Image
-                  width={320}
-                  height={50}
-                  alt="chat-bubbles-3"
-                  src={"/female-solopreneurs.png"}
-                />
-              </div>
-              <div className="absolute right-[-400px] top-[100px]">
-                <Image
-                  width={270}
-                  height={50}
-                  alt="chat-bubbles-3"
-                  src={"/mom-transitioning.png"}
-                />
-              </div>
-              <div className="absolute right-[-240px] top-[270px]">
-                <Image
-                  width={300}
-                  height={50}
-                  alt="chat-bubbles-3"
-                  src={"/women-who.png"}
-                />
-              </div>
+        <div className="absolute z-10 mt-20 flex h-full w-full flex-col items-center">
+          <div className="flex h-fit flex-col items-center space-y-4">
+            <p className="bg-cover-title-gradient relative bg-clip-text text-6xl font-semibold leading-tight text-transparent">
+              Empowering Your Success.
+              <Image
+                src={"/highlight.png"}
+                alt="Highlight"
+                width={35}
+                height={38}
+                className="absolute -right-2 -top-1"
+              />
+            </p>
+            <p className="text-2xl font-normal leading-tight text-black">
+              Achieve Financial Goals and Build Your Dream Business
+            </p>
+          </div>
+          <div className="mt-20 flex h-fit w-full flex-row items-start">
+            <p className="w-1/6 pl-14 text-3xl font-semibold">Are You...</p>
+            <div className="flex w-5/6 flex-row space-x-6 pr-5">
+              <CoverItems
+                desc="Small business owners struggling with financial planning and cash flow
+          management ?"
+                image="/small-bussiness.png"
+              />
+              <CoverItems
+                desc="Moms transitioning from corporate jobs to independent work ?"
+                image="/mom-transitioning.png"
+              />
+              <CoverItems
+                desc="Small business owners struggling with financial planning and cash flow
+          management ?"
+                image="/small-bussiness.png"
+              />
             </div>
           </div>
+          <div className="mt-5 flex h-fit w-full flex-row justify-end space-x-6 pr-32">
+            <CoverItems
+              desc="Small business owners struggling with financial planning and cash flow
+          management ?"
+              image="/small-bussiness.png"
+            />
+            <CoverItems
+              desc="Moms transitioning from corporate jobs to independent work ?"
+              image="/mom-transitioning.png"
+            />
+          </div>
         </div>
+        <Image
+          src={"/figure.png"}
+          alt="Figure"
+          width={380}
+          height={550}
+          className="absolute bottom-0 z-20"
+        />
       </div>
     </div>
   );

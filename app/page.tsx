@@ -11,7 +11,6 @@ import ServicesLg from "./components/services-lg";
 export default function Home() {
   return (
     <>
-      <Cover />
       <Intro />
       <div className="block lg:hidden">
         <Services />
@@ -19,6 +18,7 @@ export default function Home() {
         <ClientReviews />
       </div>
       <div className="hidden lg:block">
+        <Cover />
         {/* <ServiceReasons /> */}
         <ServicesLg />
         <ClientReviewsLg />
