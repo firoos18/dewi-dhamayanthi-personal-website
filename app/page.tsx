@@ -4,8 +4,9 @@ import Cover from "./components/cover";
 import Footer from "./components/footer";
 import Intro from "./components/intro";
 import Reasons from "./components/reasons";
-import ServiceReasons from "./components/service-reasons";
+// import ServiceReasons from "./components/service-reasons";
 import Services from "./components/services";
+import ServicesLg from "./components/services-lg";
 
 export default function Home() {
   return (
@@ -18,7 +19,8 @@ export default function Home() {
         <ClientReviews />
       </div>
       <div className="hidden lg:block">
-        <ServiceReasons />
+        {/* <ServiceReasons /> */}
+        <ServicesLg />
         <ClientReviewsLg />
       </div>
       <Footer />
