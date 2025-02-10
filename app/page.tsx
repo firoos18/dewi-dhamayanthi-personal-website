@@ -1,6 +1,8 @@
 import ClientReviews from "./components/client-reviews";
 import ClientReviewsLg from "./components/client-reviews-lg";
 import Cover from "./components/cover";
+import CoverMedium from "./components/cover-md";
+import CoverSmall from "./components/cover-small";
 import Footer from "./components/footer";
 import Intro from "./components/intro";
 import Reasons from "./components/reasons";
@@ -11,15 +13,18 @@ import ServicesLg from "./components/services-lg";
 export default function Home() {
   return (
     <>
-      <Intro />
-      <div className="block lg:hidden">
+      <div className="block md:hidden lg:hidden">
+        <CoverSmall />
+        <Intro />
         <Services />
         <Reasons />
         <ClientReviews />
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden md:block lg:hidden">
+        <CoverMedium />
+      </div>
+      <div className="hidden md:hidden lg:block">
         <Cover />
-        {/* <ServiceReasons /> */}
         <ServicesLg />
         <ClientReviewsLg />
       </div>
