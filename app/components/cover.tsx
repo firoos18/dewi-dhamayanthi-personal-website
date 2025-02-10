@@ -3,7 +3,7 @@ import CoverItems from "./cover-items";
 
 const Cover = () => {
   return (
-    <div className="min-h-screen w-full px-6 pb-6 pt-8">
+    <div className="h-fit w-full px-6 pb-6 pt-8">
       <div className="relative h-full min-h-[880px] w-full">
         <Image
           src={"/cover-bg.png"}

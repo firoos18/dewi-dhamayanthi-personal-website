@@ -6,9 +6,7 @@ import CoverSmall from "./components/cover-small";
 import Footer from "./components/footer";
 import Intro from "./components/intro";
 import Reasons from "./components/reasons";
-// import ServiceReasons from "./components/service-reasons";
 import Services from "./components/services";
-import ServicesLg from "./components/services-lg";
 
 export default function Home() {
   return (
@@ -25,7 +23,7 @@ export default function Home() {
       </div>
       <div className="hidden md:hidden lg:block">
         <Cover />
-        <ServicesLg />
+        <Intro />
         <ClientReviewsLg />
       </div>
       <Footer />
