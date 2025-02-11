@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="mt-14 flex min-h-72 w-full flex-col justify-center px-4 lg:px-6">
+    <div className="mt-14 flex min-h-60 w-full flex-col justify-center px-4 lg:min-h-72 lg:px-6">
       <div className="relative mb-8 h-full min-h-72 w-full">
         <Image
           src={"/footer-bg.png"}
@@ -11,7 +11,29 @@ const Footer = () => {
           priority
           style={{ borderRadius: "16px" }}
         />
-        <div className="absolute z-10 flex w-full flex-row justify-between px-6 pt-10">
+        <div className="absolute z-10 flex w-full flex-col px-4 pt-10 lg:hidden">
+          <p className="h-fit w-1/4 text-xs font-bold leading-tight text-primary">
+            Dewi Dhamayanthi.
+          </p>
+          <p className="mt-6 h-fit w-full text-[14px] font-bold leading-tight">
+            My Media & Contacts
+          </p>
+          <div className="mt-4 grid w-full grid-flow-col gap-4 text-wrap text-[14px] text-[#878787]">
+            <div className="flex h-fit w-fit flex-col space-y-3 font-semibold">
+              <p>Instagram</p>
+              <p>LinkedIn</p>
+              <p>Email</p>
+              <p>Phone</p>
+            </div>
+            <div className="flex h-fit w-fit flex-col space-y-3">
+              <p>@dee_dhamayanthi</p>
+              <p>Dewi Dhamayanthi</p>
+              <p>va.deedhamayanthi@gmail.com</p>
+              <p>+62 819-0143-0494</p>
+            </div>
+          </div>
+        </div>
+        <div className="absolute z-10 hidden w-full px-6 pt-10 lg:flex lg:flex-row lg:justify-between">
           <div className="flex h-full w-1/3 flex-col items-start">
             <p className="h-1/6 w-1/4 text-lg font-bold leading-tight text-primary">
               Dewi Dhamayanthi.
