@@ -18,14 +18,14 @@ const Footer = () => {
           <p className="mt-6 h-fit w-full text-[14px] font-bold leading-tight">
             My Media & Contacts
           </p>
-          <div className="mt-4 grid w-full grid-flow-col gap-4 text-wrap text-[14px] text-[#878787]">
-            <div className="flex h-fit w-fit flex-col space-y-3 font-semibold">
+          <div className="mt-4 grid w-full grid-flow-col gap-4 overflow-auto text-wrap text-[14px] text-[#878787]">
+            <div className="flex h-fit w-full flex-col space-y-3 font-semibold">
               <p>Instagram</p>
               <p>LinkedIn</p>
               <p>Email</p>
               <p>Phone</p>
             </div>
-            <div className="flex h-fit w-fit flex-col space-y-3">
+            <div className="flex h-fit w-full flex-col space-y-3">
               <p>@dee_dhamayanthi</p>
               <p>Dewi Dhamayanthi</p>
               <p>va.deedhamayanthi@gmail.com</p>
