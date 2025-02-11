@@ -12,13 +12,13 @@ const Footer = () => {
           style={{ borderRadius: "16px" }}
         />
         <div className="absolute z-10 flex w-full flex-col px-4 pt-10 lg:hidden">
-          <p className="h-fit w-1/4 text-xs font-bold leading-tight text-primary">
+          <p className="h-fit w-1/4 text-base font-bold leading-tight text-primary">
             Dewi Dhamayanthi.
           </p>
-          <p className="mt-6 h-fit w-full text-[14px] font-bold leading-tight">
+          <p className="mt-6 h-fit w-full text-sm font-bold leading-tight">
             My Media & Contacts
           </p>
-          <div className="mt-4 grid w-full grid-flow-col gap-4 overflow-auto text-wrap text-[14px] text-[#878787]">
+          <div className="mt-4 grid w-full grid-flow-col gap-4 overflow-auto text-wrap text-sm text-[#878787]">
             <div className="flex h-fit w-full flex-col space-y-3 font-semibold">
               <p>Instagram</p>
               <p>LinkedIn</p>
