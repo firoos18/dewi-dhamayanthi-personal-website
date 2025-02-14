@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ServicesItemLg, { Services } from "./services-item-lg";
 
-const ServicesList: Services[] = [
+export const ServicesList: Services[] = [
   {
     image: "/achieve.png",
     desc: "Set up a financial system that ensures stability, even in fluctuating months.",
@@ -42,7 +42,7 @@ const Intro = () => {
             style={{ objectFit: "contain" }}
           />
         </div>
-        <div className="bg-intro-fill-gradient mt-[48px] flex h-[88%] w-2/3 flex-col justify-between rounded-2xl border-2 border-white p-6">
+        <div className="mt-[48px] flex h-[88%] w-2/3 flex-col justify-between rounded-2xl border-2 border-white bg-intro-fill-gradient p-6">
           <div className="flex flex-col space-y-6">
             <p className="text-2xl font-semibold">Hi! I’m Dewi Dhamayanthi.</p>
             <p className="text-sm font-normal">

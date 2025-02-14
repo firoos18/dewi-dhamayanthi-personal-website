@@ -5,16 +5,15 @@ import CoverMedium from "./components/cover-md";
 import CoverSmall from "./components/cover-small";
 import Footer from "./components/footer";
 import Intro from "./components/intro";
+import IntroSm from "./components/intro-sm";
 import Reasons from "./components/reasons";
-import Services from "./components/services";
 
 export default function Home() {
   return (
     <>
       <div className="block md:hidden lg:hidden">
         <CoverSmall />
-        <Intro />
-        <Services />
+        <IntroSm />
         <Reasons />
         <ClientReviews />
       </div>

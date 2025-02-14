@@ -21,6 +21,8 @@ export default {
           "linear-gradient(180deg, rgba(248, 247, 242, 0.6) 0%, rgba(248, 247, 242, 0.42) 100%)",
         "intro-fill-gradient":
           "linear-gradient(92deg, rgba(177, 192, 192, 0.3) 0%, rgba(248, 247, 242, 0.5) 101.56%)",
+        "intro-fill-gradient-sm":
+          "linear-gradient(92deg, rgba(177, 192, 192, 0.8) 0%, rgba(248, 247, 242, 1) 101.56%)",
       },
       colors: {
         background: "var(--background)",
