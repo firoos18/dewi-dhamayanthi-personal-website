@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import TopBar from "./components/topbar";
+import Toaster from "@/components/atoms/Toaster";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -23,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${poppins.variable} antialiased min-h-screen overflow-y-auto`}
+        className={`${poppins.variable} min-h-screen overflow-y-auto antialiased`}
       >
-        <TopBar />
-        <div className="relative text-black">{children}</div>
+        <div className="relative text-black">
+          <Toaster />
+          {children}
+        </div>
       </body>
     </html>
   );

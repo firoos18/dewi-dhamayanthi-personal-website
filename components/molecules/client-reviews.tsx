@@ -2,14 +2,16 @@ import Image from "next/image";
 
 const ClientReviews = () => {
   return (
-    <div className="relative flex flex-col items-center w-full min-h-screen px-4 mt-20">
-      <div className="w-full flex flex-row items-center">
-        <p className="text-3xl sm:text-4xl font-semibold">Client Reviews</p>
-        <div className="flex-grow h-[1px] bg-black ml-5" />
+    <div className="relative mt-20 flex min-h-screen w-full flex-col items-center px-4">
+      <div className="flex w-full flex-row items-center">
+        <p className="w-[236px] text-3xl font-semibold sm:text-4xl">
+          Shared by Our Valued Clients
+        </p>
+        <div className="ml-5 h-[1px] flex-grow bg-black" />
       </div>
-      <div className="flex flex-col h-fit mt-12 space-y-4">
-        <div className="bg-[#B1C0C066] p-4 rounded-[16px]">
-          <p className="text-[#6A6A6A] text-base sm:text-lg">
+      <div className="mt-12 flex h-fit flex-col space-y-4">
+        <div className="rounded-[16px] bg-[#B1C0C066] p-4">
+          <p className="text-base text-[#6A6A6A] sm:text-lg">
             “Working with Dewi has been a transformative experience for my
             business! Her financial management skills have completely
             streamlined our bookkeeping and budgeting. I can now focus on
@@ -17,7 +19,7 @@ const ClientReviews = () => {
             flawlessly. Thanks to Dewi, our finances have never been more
             organized!”
           </p>
-          <div className="flex flex-row mt-6 items-center">
+          <div className="mt-6 flex flex-row items-center">
             <Image
               src={"/client.png"}
               width={50}
@@ -25,16 +27,16 @@ const ClientReviews = () => {
               alt="client"
               className="rounded-full"
             />
-            <div className="flex flex-col ml-4">
-              <p className="text-base sm:text-lg font-semibold">Emi Wang</p>
-              <p className="text-xs sm:text-base text-[#6A6A6A]">
+            <div className="ml-4 flex flex-col">
+              <p className="text-base font-semibold sm:text-lg">Emi Wang</p>
+              <p className="text-xs text-[#6A6A6A] sm:text-base">
                 Small Bussiness Owner
               </p>
             </div>
           </div>
         </div>
-        <div className="bg-[#B1C0C066] p-4 rounded-[16px]">
-          <p className="text-[#6A6A6A] text-base sm:text-lg">
+        <div className="rounded-[16px] bg-[#B1C0C066] p-4">
+          <p className="text-base text-[#6A6A6A] sm:text-lg">
             “Working with Dewi has been a transformative experience for my
             business! Her financial management skills have completely
             streamlined our bookkeeping and budgeting. I can now focus on
@@ -42,7 +44,7 @@ const ClientReviews = () => {
             flawlessly. Thanks to Dewi, our finances have never been more
             organized!”
           </p>
-          <div className="flex flex-row mt-6 items-center">
+          <div className="mt-6 flex flex-row items-center">
             <Image
               src={"/client.png"}
               width={50}
@@ -50,16 +52,16 @@ const ClientReviews = () => {
               alt="client"
               className="rounded-full"
             />
-            <div className="flex flex-col ml-4">
-              <p className="text-base sm:text-lg font-semibold">Emi Wang</p>
-              <p className="text-xs sm:text-base text-[#6A6A6A]">
+            <div className="ml-4 flex flex-col">
+              <p className="text-base font-semibold sm:text-lg">Emi Wang</p>
+              <p className="text-xs text-[#6A6A6A] sm:text-base">
                 Small Bussiness Owner
               </p>
             </div>
           </div>
         </div>
-        <div className="bg-[#B1C0C066] p-4 rounded-[16px]">
-          <p className="text-[#6A6A6A] text-base sm:text-lg">
+        <div className="rounded-[16px] bg-[#B1C0C066] p-4">
+          <p className="text-base text-[#6A6A6A] sm:text-lg">
             “Working with Dewi has been a transformative experience for my
             business! Her financial management skills have completely
             streamlined our bookkeeping and budgeting. I can now focus on
@@ -67,7 +69,7 @@ const ClientReviews = () => {
             flawlessly. Thanks to Dewi, our finances have never been more
             organized!”
           </p>
-          <div className="flex flex-row mt-6 items-center">
+          <div className="mt-6 flex flex-row items-center">
             <Image
               src={"/client.png"}
               width={50}
@@ -75,9 +77,9 @@ const ClientReviews = () => {
               alt="client"
               className="rounded-full"
             />
-            <div className="flex flex-col ml-4">
-              <p className="text-base sm:text-lg font-semibold">Emi Wang</p>
-              <p className="text-xs sm:text-base text-[#6A6A6A]">
+            <div className="ml-4 flex flex-col">
+              <p className="text-base font-semibold sm:text-lg">Emi Wang</p>
+              <p className="text-xs text-[#6A6A6A] sm:text-base">
                 Small Bussiness Owner
               </p>
             </div>

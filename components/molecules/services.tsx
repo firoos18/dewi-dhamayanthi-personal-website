@@ -1,19 +1,19 @@
+import Image from "next/image";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import Image from "next/image";
+} from "../atoms/accordion";
 
 const Services = () => {
   return (
-    <div className="relative min-h-fit mt-9 px-4 flex flex-col">
-      <div className="w-full flex flex-row items-center">
-        <p className="text-3xl sm:text-4xl font-semibold">Services I Offer</p>
-        <div className="flex-grow h-[1px] bg-black ml-5" />
+    <div className="relative mt-9 flex min-h-fit flex-col px-4">
+      <div className="flex w-full flex-row items-center">
+        <p className="text-3xl font-semibold sm:text-4xl">Services I Offer</p>
+        <div className="ml-5 h-[1px] flex-grow bg-black" />
       </div>
-      <Accordion type="single" collapsible className="w-full mt-8">
+      <Accordion type="single" collapsible className="mt-8 w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>
             <div className="flex flex-row justify-start">
@@ -26,7 +26,7 @@ const Services = () => {
                   priority
                 />
               </div>
-              <p className="ml-4 font-semibold text-lg text-start">
+              <p className="ml-4 text-start text-lg font-semibold">
                 Financial Management
               </p>
             </div>
@@ -48,7 +48,7 @@ const Services = () => {
                   priority
                 />
               </div>
-              <p className="ml-4 font-semibold text-lg text-start">
+              <p className="ml-4 text-start text-lg font-semibold">
                 Project Coordination
               </p>
             </div>
@@ -70,7 +70,7 @@ const Services = () => {
                   priority
                 />
               </div>
-              <p className="ml-4 font-semibold text-lg text-start">
+              <p className="ml-4 text-start text-lg font-semibold">
                 Business Support
               </p>
             </div>

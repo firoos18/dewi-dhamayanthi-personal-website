@@ -1,17 +1,17 @@
 import Image from "next/image";
-import ServicesItem from "./services-item";
+import ServicesItem from "../atoms/services-item";
 
 const ServiceReasons = () => {
   return (
-    <div className="flex flex-col min-h-screen py-20 px-24 justify-center">
-      <div className="flex flex-col w-full">
-        <div className="w-full flex flex-row items-center">
-          <p className="text-3xl sm:text-4xl lg:text-6xl font-semibold">
+    <div className="flex min-h-screen flex-col justify-center px-24 py-20">
+      <div className="flex w-full flex-col">
+        <div className="flex w-full flex-row items-center">
+          <p className="text-3xl font-semibold sm:text-4xl lg:text-6xl">
             Services I Offer
           </p>
-          <div className="flex-grow h-[1px] bg-black ml-5" />
+          <div className="ml-5 h-[1px] flex-grow bg-black" />
         </div>
-        <div className="flex flex-row w-full h-fit mt-12 space-x-10">
+        <div className="mt-12 flex h-fit w-full flex-row space-x-10">
           <ServicesItem
             image="/financial-management.png"
             content="Handling bookkeeping, budgeting, invoicing, and financial reporting
@@ -32,14 +32,14 @@ const ServiceReasons = () => {
           />
         </div>
       </div>
-      <div className="w-full flex flex-row items-center mt-20">
-        <p className="text-3xl sm:text-4xl lg:text-6xl font-semibold">
+      <div className="mt-20 flex w-full flex-row items-center">
+        <p className="text-3xl font-semibold sm:text-4xl lg:text-6xl">
           Why Work With Me
         </p>
-        <div className="flex-grow h-[1px] bg-black ml-5" />
+        <div className="ml-5 h-[1px] flex-grow bg-black" />
       </div>
-      <div className="flex flex-row mt-12 w-full">
-        <div className="bg-[#F8F7F2] p-4 rounded-[16px] w-1/3">
+      <div className="mt-12 flex w-full flex-row">
+        <div className="w-1/3 rounded-[16px] bg-[#F8F7F2] p-4">
           <div className="flex flex-row items-center">
             <Image
               src={"/experienced.png"}
@@ -47,17 +47,17 @@ const ServiceReasons = () => {
               width={60}
               height={60}
             />
-            <p className="ml-4 text-lg sm:text-xl lg:text-2xl font-semibold">
+            <p className="ml-4 text-lg font-semibold sm:text-xl lg:text-2xl">
               Experienced
             </p>
           </div>
-          <p className="text-[#6A6A6A] font-medium mt-10 lg:text-xl">
+          <p className="mt-10 font-medium text-[#6A6A6A] lg:text-xl">
             With a strong background in finance and project management for more
             than <b>20 years</b>, I understand the unique challenges business
             owners face and provide tailored solutions.
           </p>
         </div>
-        <div className="bg-[#F8F7F2] p-4 rounded-[16px] w-1/3">
+        <div className="w-1/3 rounded-[16px] bg-[#F8F7F2] p-4">
           <div className="flex flex-row items-center">
             <Image
               src={"/reliable.png"}
@@ -65,16 +65,16 @@ const ServiceReasons = () => {
               width={60}
               height={60}
             />
-            <p className="ml-4 text-lg sm:text-xl font-semibold lg:text-2xl">
+            <p className="ml-4 text-lg font-semibold sm:text-xl lg:text-2xl">
               Reliable Partner
             </p>
           </div>
-          <p className="text-[#6A6A6A] font-medium mt-10 lg:text-xl">
+          <p className="mt-10 font-medium text-[#6A6A6A] lg:text-xl">
             I pride myself on being proactive, responsive, and detail-oriented,
             ensuring every task is completed to the highest standard.
           </p>
         </div>
-        <div className="bg-[#F8F7F2] p-4 rounded-[16px] w-1/3">
+        <div className="w-1/3 rounded-[16px] bg-[#F8F7F2] p-4">
           <div className="flex flex-row items-center">
             <Image
               src={"/flexible.png"}
@@ -82,11 +82,11 @@ const ServiceReasons = () => {
               width={60}
               height={60}
             />
-            <p className="ml-4 text-lg sm:text-xl font-semibold lg:text-2xl">
+            <p className="ml-4 text-lg font-semibold sm:text-xl lg:text-2xl">
               Flexible Solutions
             </p>
           </div>
-          <p className="text-[#6A6A6A] font-medium mt-10 lg:text-xl">
+          <p className="mt-10 font-medium text-[#6A6A6A] lg:text-xl">
             Whether you need ongoing support or help with a specific project, I
             adapt to your needs to deliver the best results.
           </p>

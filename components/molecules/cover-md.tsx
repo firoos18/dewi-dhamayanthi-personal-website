@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CoverItems from "./cover-items";
+import CoverItems from "../atoms/cover-items";
 
 const CoverMedium = () => {
   return (

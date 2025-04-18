@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ServicesList } from "./intro";
-import ServicesItemLg from "./services-item-lg";
+import ServicesItemLg from "../atoms/services-item-lg";
 
 const IntroSm = () => {
   return (

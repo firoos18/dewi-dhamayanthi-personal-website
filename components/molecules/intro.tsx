@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ServicesItemLg, { Services } from "./services-item-lg";
+import ServicesItemLg, { Services } from "../atoms/services-item-lg";
 
 export const ServicesList: Services[] = [
   {

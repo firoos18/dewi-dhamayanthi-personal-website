@@ -15,7 +15,7 @@ const ServicesItem = ({ image, title, content }: ServicesItemProps) => {
 
   return (
     <div
-      className={`flex flex-col p-8 border-[#DADADA] rounded-[16px] border space-y-10 w-1/3 ${
+      className={`flex w-1/3 flex-col space-y-10 rounded-[16px] border border-[#DADADA] p-8 ${
         !isOpened ? "h-52" : ""
       }`}
     >
@@ -29,7 +29,7 @@ const ServicesItem = ({ image, title, content }: ServicesItemProps) => {
         className="flex flex-row items-center justify-between"
         onClick={() => setIsOpened(!isOpened)}
       >
-        <p className="text-2xl font-semibold w-40 text-start">{title}</p>
+        <p className="w-40 text-start text-2xl font-semibold">{title}</p>
         <CustomChevronDown
           className={`transition-transform duration-200 ${
             isOpened ? "rotate-180" : ""

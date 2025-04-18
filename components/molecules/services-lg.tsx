@@ -1,10 +1,10 @@
-import ServicesItemLg from "./services-item-lg";
+import ServicesItemLg from "../atoms/services-item-lg";
 
 const ServicesLg = () => {
   return (
-    <div className="flex flex-col w-full min-h-screen px-10 py-56 space-y-5">
-      <div className="flex flex-row w-full h-[273px] space-x-5">
-        <div className="w-1/3 bg-primary text-3xl text-white font-semibold p-[30px] flex flex-col justify-end rounded-tl-lg rounded-bl-xl rounded-br-xl rounded-tr-[100px]">
+    <div className="flex min-h-screen w-full flex-col space-y-5 px-10 py-56">
+      <div className="flex h-[273px] w-full flex-row space-x-5">
+        <div className="flex w-1/3 flex-col justify-end rounded-bl-xl rounded-br-xl rounded-tl-lg rounded-tr-[100px] bg-primary p-[30px] text-3xl font-semibold text-white">
           <p>
             I Help <span className="text-secondary">Mompreneurs</span> Running
             Service-Based Businesses To:
@@ -21,7 +21,7 @@ const ServicesLg = () => {
           image="/price.png"
         />
       </div>
-      <div className="flex flex-row w-full h-[273px] space-x-5">
+      <div className="flex h-[273px] w-full flex-row space-x-5">
         <ServicesItemLg
           description="Implement simple, stress-free financial planning to keep finances organized."
           title="Separate Personal & Business Finances"
