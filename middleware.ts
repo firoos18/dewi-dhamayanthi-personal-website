@@ -8,8 +8,14 @@ export default function middleware(req: NextRequest) {
     const isCmsRoute = pathname.startsWith("/cms");
     const isCmsLogin = pathname === "/cms/auth";
 
-    if (isCmsRoute && !token && !isCmsLogin) {
-      return NextResponse.redirect(new URL("/cms/auth?login=true", req.url));
+    if (isCmsRoute && !token) {
+      if (!isCmsLogin) {
+        return NextResponse.redirect(new URL("/cms/auth?login=true", req.url));
+      }
+    }
+
+    if (isCmsLogin && token) {
+      return NextResponse.redirect(new URL("/cms/", req.url));
     }
   } catch (error) {
     console.error("Middleware error:", error);
