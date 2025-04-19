@@ -7,7 +7,8 @@ import {
 } from "@/interfaces/auth/auth.interface";
 import { toast } from "react-toastify";
 import { create } from "zustand";
-import { loginAction, logOutAction, signUpAction } from "./auth.action";
+import { getMe, postLogin, postRegister } from "@/services/auth/api";
+import { deleteToken, setToken } from "@/utils/cookies/cookies.data";
 
 type AuthState = {
   isLoading: boolean;
@@ -36,19 +37,15 @@ const useAuthStore = create<AuthState & AuthActions>((set, get) => ({
   login: async (body) => {
     set({ isLoading: true, error: null });
     try {
-      const res = await loginAction(body);
-      if (res.success) {
+      const res = await postLogin(body);
+      if (res.status && res.data) {
+        setToken(res.data?.token);
         toast.success("Login Success!");
       } else {
         set({ error: res.message });
-        toast.error(res.message);
       }
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error("An unexpected error occurred");
-      }
+    } catch {
+      toast.error(get().error);
     } finally {
       set({ isLoading: false });
     }
@@ -57,32 +54,44 @@ const useAuthStore = create<AuthState & AuthActions>((set, get) => ({
   signUp: async (body) => {
     set({ isLoading: true, error: null });
     try {
-      const res = await signUpAction(body);
+      const res = await postRegister(body);
       if (res.status) {
         toast.success("User registered!");
       } else {
         set({ error: res.message });
-        toast.error(res.message);
       }
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error("An unexpected error occurred");
-      }
+    } catch {
+      toast.error(get().error);
     } finally {
       set({ isLoading: false });
     }
   },
 
   logout: async () => {
-    await logOutAction();
+    await deleteToken();
     toast.info("Logged out");
   },
 
-  me: async () => {},
+  me: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const res = await getMe();
 
-  reset: () => {},
+      if (res.status && res.data) {
+        set({ userData: res.data });
+      } else {
+        set({ error: res.message });
+      }
+    } catch {
+      toast.error(get().error);
+    } finally {
+      set({ isLoading: false });
+    }
+  },
+
+  reset: () => {
+    set({ ...initialAuthState });
+  },
 }));
 
 export default useAuthStore;

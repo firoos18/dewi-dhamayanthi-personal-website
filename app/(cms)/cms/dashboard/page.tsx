@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
-const cms = () => {
+const Page = () => {
   redirect("/cms/dashboard/home");
 };
 
-export default cms;
+export default Page;

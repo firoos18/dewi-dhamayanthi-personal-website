@@ -5,11 +5,11 @@ import { Button } from "./button";
 import { Eye, EyeOff } from "lucide-react";
 import { Input } from "./input";
 
-interface PasswordInputProps extends ComponentPropsWithoutRef<typeof Input> {
+interface IPasswordInputProps extends ComponentPropsWithoutRef<typeof Input> {
   placeholder: string;
 }
 
-const PasswordInput: React.FC<PasswordInputProps> = ({
+const PasswordInput: React.FC<IPasswordInputProps> = ({
   placeholder,
   ...props
 }) => {

@@ -1,5 +1,5 @@
+import { getToken } from "@/utils/cookies/cookies.data";
 import axios from "axios";
-import { cookies } from "next/headers";
 
 const satellite = axios.create({
   baseURL: "http://192.168.1.5:4000",
@@ -8,10 +8,9 @@ const satellite = axios.create({
 
 satellite.interceptors.request.use(
   async (request) => {
-    const cookie = await cookies();
-    const token = cookie.get("token");
+    const token = await getToken();
 
-    if (token) request.headers["Authorization"] = `Bearer ${token.value}`;
+    if (token) request.headers["Authorization"] = `Bearer ${token}`;
 
     return request;
   },

@@ -5,7 +5,7 @@ import { Button } from "../atoms/button";
 import PasswordInput from "../atoms/PasswordInput";
 import { Input } from "../atoms/input";
 import { IUserLoginRequestBody } from "@/interfaces/auth/auth.interface";
-import useAuthStore from "@/store/auth/useAuthStore";
+import useAuthStore from "@/store/useAuthStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -30,10 +30,10 @@ const LoginForm = () => {
   const { isLoading, login } = useAuthStore();
 
   const handleLogin = async () => {
-    const registerData = watch();
+    const loginData = watch();
 
-    await login(registerData);
-    router.replace("/cms/");
+    await login(loginData);
+    router.replace("/cms/dashboard/home");
   };
 
   return (

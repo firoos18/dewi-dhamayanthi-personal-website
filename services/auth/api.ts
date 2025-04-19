@@ -1,4 +1,5 @@
 import {
+  IUserData,
   IUserLoginRequestBody,
   IUserLoginResponseBody,
   IUserRegisterRequestBody,
@@ -17,6 +18,12 @@ export const postLogin = async (body: IUserLoginRequestBody) => {
 
 export const postRegister = async (body: IUserRegisterRequestBody) => {
   const res = await satellite.post<IBaseResponse>("/auth/register", body);
+
+  return res.data;
+};
+
+export const getMe = async () => {
+  const res = await satellite.get<IBaseResponse<IUserData>>("/auth/me");
 
   return res.data;
 };

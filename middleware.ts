@@ -15,7 +15,7 @@ export default function middleware(req: NextRequest) {
     }
 
     if (isCmsLogin && token) {
-      return NextResponse.redirect(new URL("/cms/", req.url));
+      return NextResponse.redirect(new URL("/cms/dashboard/home", req.url));
     }
   } catch (error) {
     console.error("Middleware error:", error);

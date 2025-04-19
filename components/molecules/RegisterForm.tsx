@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@/utils/validation/validation.schema";
 import TextFieldError from "../atoms/TextFieldError";
-import useAuthStore from "@/store/auth/useAuthStore";
+import useAuthStore from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
 
 const RegisterForm = () => {
