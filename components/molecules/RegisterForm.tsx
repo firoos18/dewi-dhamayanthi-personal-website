@@ -67,6 +67,7 @@ const RegisterForm = () => {
           variant={"default"}
           size={"default"}
           type="submit"
+          disabled={isLoading}
         >
           {isLoading ? "Loading..." : "Register"}
         </Button>
