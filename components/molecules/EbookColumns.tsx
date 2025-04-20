@@ -190,7 +190,9 @@ export const EbookColumn: ColumnDef<IEbook>[] = [
             <DropdownMenuItem>View ebook details</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Edit ebook details</DropdownMenuItem>
-            <DropdownMenuItem>Delete ebook details</DropdownMenuItem>
+            <DropdownMenuItem className="text-red-600 focus:border-red-600 focus:bg-red-600/10 focus:text-red-600">
+              Delete ebook details
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
