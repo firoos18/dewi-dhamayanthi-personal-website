@@ -13,6 +13,8 @@ export const postLogin = async (body: IUserLoginRequestBody) => {
     body,
   );
 
+  console.log(res);
+
   return res.data;
 };
 

@@ -2,7 +2,7 @@ import { getToken } from "@/utils/cookies/cookies.data";
 import axios from "axios";
 
 const satellite = axios.create({
-  baseURL: "http://192.168.1.5:4000",
+  baseURL: "http://10.91.29.17:4000",
   timeout: 20_000,
 });
 
