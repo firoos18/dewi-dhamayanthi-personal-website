@@ -1,7 +1,8 @@
+import PostPage from "@/components/organisms/PostPage";
 import React from "react";
 
 const Page = () => {
-  return <div>Post Page</div>;
+  return <PostPage />;
 };
 
 export default Page;

@@ -1,8 +1,12 @@
 import AuthPage from "@/components/organisms/AuthPage";
-import React from "react";
+import React, { Suspense } from "react";
 
 const Page = () => {
-  return <AuthPage />;
+  return (
+    <Suspense>
+      <AuthPage />
+    </Suspense>
+  );
 };
 
 export default Page;

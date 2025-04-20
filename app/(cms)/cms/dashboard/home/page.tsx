@@ -1,7 +1,8 @@
+import HomePage from "@/components/organisms/HomePage";
 import React from "react";
 
 const Page = () => {
-  return <div>Home Page</div>;
+  return <HomePage />;
 };
 
 export default Page;

@@ -1,7 +1,8 @@
+import EbookPage from "@/components/organisms/EbookPage";
 import React from "react";
 
 const Page = () => {
-  return <div>Ebook Page</div>;
+  return <EbookPage />;
 };
 
 export default Page;
