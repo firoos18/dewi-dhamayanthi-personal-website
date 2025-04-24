@@ -24,6 +24,14 @@ body {
   font-family: Poppins;
 }
 
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #6a8a8e;
+  pointer-events: none;
+  height: 0;
+}
+
 @layer base {
   :root {
     --radius: 0.5rem;

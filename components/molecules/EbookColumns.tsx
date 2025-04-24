@@ -86,16 +86,6 @@ export const EbookColumn: ColumnDef<IEbook>[] = [
     size: 300,
   },
   {
-    accessorKey: "description",
-    header: () => (
-      <div className="max-w-[300px] text-center font-semibold">Description</div>
-    ),
-    cell: ({ row }) => (
-      <div className="max-w-[300px]">{row.getValue("description")}</div>
-    ),
-    size: 300,
-  },
-  {
     accessorKey: "status",
     header: () => (
       <div className="max-w-[500px] text-center font-semibold">Status</div>

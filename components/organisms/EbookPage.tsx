@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useCallback, useEffect, useMemo } from "react";
-import { Button } from "../atoms/button";
-import { BookPlusIcon } from "lucide-react";
 import SearchInput from "../atoms/SearchInput";
 import EbooksDataTable from "../molecules/EbooksDataTable";
 import useEbookStore from "@/store/useEbookStore";
 import { debounce } from "lodash";
+import AddEbookDialog from "../molecules/AddEbookDialog";
+import useEbookCategoryStore from "@/store/useEbookCategoryStore";
 
 const EbookPage = () => {
   const {
@@ -18,6 +18,7 @@ const EbookPage = () => {
     totalRecords,
     currentPage,
   } = useEbookStore();
+  const { fetchEbookCategories } = useEbookCategoryStore();
 
   const debouncedSetQuery = useMemo(() => {
     return debounce((val: string) => {
@@ -33,7 +34,8 @@ const EbookPage = () => {
 
   useEffect(() => {
     fetchEbooks(1);
-  }, [fetchEbooks]);
+    fetchEbookCategories();
+  }, [fetchEbookCategories, fetchEbooks]);
 
   const handleSearchChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,10 +60,7 @@ const EbookPage = () => {
     <div className="min-h-screen w-full px-6 py-8">
       <div className="flex w-full flex-row justify-between">
         <p className="text-3xl font-semibold text-primary">E-Books</p>
-        <Button variant={"default"}>
-          <BookPlusIcon size={20} color="white" />
-          Add E-Book
-        </Button>
+        <AddEbookDialog />
       </div>
       <div className="mt-10">
         <SearchInput placeholder="Find E-Books" onChange={handleSearchChange} />

@@ -13,3 +13,13 @@ export const getAllEbooks = async (
 
   return res.data;
 };
+
+export const addEbook = async (body: FormData) => {
+  const res = await satellite.post<IPaginatedResponse>(`/ebook`, body, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+
+  return res.data;
+};

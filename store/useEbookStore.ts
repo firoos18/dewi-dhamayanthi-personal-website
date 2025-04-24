@@ -1,5 +1,5 @@
 import { IEbook } from "@/interfaces/ebook/ebook.interface";
-import { getAllEbooks } from "@/services/ebook/api";
+import { addEbook, getAllEbooks } from "@/services/ebook/api";
 import { toast } from "react-toastify";
 import { create } from "zustand";
 
@@ -16,6 +16,7 @@ type EbookState = {
 
 type EbookActions = {
   fetchEbooks: (page?: number) => Promise<void>;
+  addEbook: (body: FormData) => Promise<void>;
   setQuery: (query: string) => void;
   setPage: (page: number) => void;
   reset: () => void;
@@ -69,6 +70,25 @@ const useEbookStore = create<EbookState & EbookActions>((set, get) => ({
       toast.error(get().error);
     } finally {
       set({ isLoading: false });
+    }
+  },
+
+  addEbook: async (body: FormData) => {
+    set({ isLoading: true });
+
+    try {
+      const res = await addEbook(body);
+
+      if (res.status) {
+        toast.success(res.message);
+      } else {
+        set({ error: res.message });
+      }
+    } catch {
+      toast.error(get().error);
+    } finally {
+      set({ isLoading: false });
+      get().fetchEbooks();
     }
   },
 
