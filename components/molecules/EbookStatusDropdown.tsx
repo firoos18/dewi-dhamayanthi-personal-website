@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,10 +26,6 @@ const EbookStatusDropdown: React.FC<IEbookStatusDropdownProps> = ({
   onChange,
   value,
 }) => {
-  useEffect(() => {
-    console.log(value);
-  }, [value]);
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

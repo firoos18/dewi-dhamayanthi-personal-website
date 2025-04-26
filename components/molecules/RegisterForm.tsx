@@ -11,6 +11,7 @@ import { registerSchema } from "@/utils/validation/validation.schema";
 import TextFieldError from "../atoms/TextFieldError";
 import useAuthStore from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
+import { LoadingSpinner } from "../atoms/LoadingSpinner";
 
 const RegisterForm = () => {
   const router = useRouter();
@@ -69,7 +70,7 @@ const RegisterForm = () => {
           type="submit"
           disabled={isLoading}
         >
-          {isLoading ? "Loading..." : "Register"}
+          {isLoading ? <LoadingSpinner /> : "Register"}
         </Button>
       </form>
     </>

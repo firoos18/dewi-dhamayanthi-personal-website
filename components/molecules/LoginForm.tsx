@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { loginSchema } from "@/utils/validation/validation.schema";
 import TextFieldError from "../atoms/TextFieldError";
+import { LoadingSpinner } from "../atoms/LoadingSpinner";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -58,7 +59,7 @@ const LoginForm = () => {
           type="submit"
           disabled={isLoading}
         >
-          {isLoading ? "Loading..." : "Login"}
+          {isLoading ? <LoadingSpinner /> : "Login"}
         </Button>
       </form>
     </>

@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useRef, type ChangeEvent, type DragEvent } from "react";
+import {
+  useState,
+  useRef,
+  type ChangeEvent,
+  type DragEvent,
+  useEffect,
+} from "react";
 import { ImageIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 
@@ -9,15 +15,18 @@ interface ImageUploadProps {
   onFileSelect?: (file: File) => void;
   label?: string;
   onChange?: (file: File | null) => void;
+  currentCover?: string | null;
 }
 
 export default function ImageUpload({
   maxSizeMB = 25,
   onFileSelect,
   onChange,
+  currentCover,
 }: ImageUploadProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [currentImage, setCurrentImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -79,6 +88,10 @@ export default function ImageUpload({
     }
   };
 
+  useEffect(() => {
+    if (currentCover) setCurrentImage(currentCover);
+  }, [currentCover]);
+
   return (
     <div className="w-full">
       <div
@@ -126,6 +139,26 @@ export default function ImageUpload({
             <p className="mt-1 text-xs text-gray-500">
               {(selectedFile.size / (1024 * 1024)).toFixed(2)} MB
             </p>
+          </div>
+        ) : currentImage ? (
+          <div className="flex flex-col items-center">
+            <div className="relative">
+              <Image
+                src={currentImage}
+                alt={currentImage}
+                width={200}
+                height={200}
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+              <div
+                className="absolute -right-3 -top-3 cursor-pointer rounded-full bg-white p-1"
+                onClick={() => setCurrentImage(null)}
+              >
+                <XIcon color="red" width={20} height={20} />
+              </div>
+            </div>
           </div>
         ) : (
           <>

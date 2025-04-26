@@ -20,6 +20,7 @@ import {
 } from "../atoms/table";
 import { ScrollArea, ScrollBar } from "../atoms/scroll-area";
 import { EbookColumn } from "@/components/molecules/EbookColumns";
+import { Skeleton } from "../atoms/skeleton";
 
 interface IEbooksDataTableProps {
   data: IEbook[];
@@ -30,6 +31,9 @@ interface IEbooksDataTableProps {
   onNextPage: () => void;
   canGoToPrevious: boolean;
   canGoToNext: boolean;
+  onViewCover: (ebook: IEbook | null) => void;
+  onViewDetails: (ebook: IEbook | null) => void;
+  onEditDetails: (ebook: IEbook | null) => void;
 }
 
 const EbooksDataTable: React.FC<IEbooksDataTableProps> = ({
@@ -41,12 +45,15 @@ const EbooksDataTable: React.FC<IEbooksDataTableProps> = ({
   currentPage,
   canGoToPrevious,
   canGoToNext,
+  onViewCover,
+  onViewDetails,
+  onEditDetails,
 }) => {
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
     data,
-    columns: EbookColumn,
+    columns: EbookColumn({ onViewCover, onViewDetails, onEditDetails }),
     manualPagination: true,
     rowCount: totalRecords,
     getCoreRowModel: getCoreRowModel(),
@@ -87,7 +94,21 @@ const EbooksDataTable: React.FC<IEbooksDataTableProps> = ({
                 ))}
               </TableHeader>
               <TableBody>
-                {table.getRowModel().rows?.length ? (
+                {isLoading ? (
+                  [...Array(3)].map((_, index) => (
+                    <TableRow key={`skeleton-${index}`}>
+                      {EbookColumn({
+                        onViewCover,
+                        onViewDetails,
+                        onEditDetails,
+                      }).map((_, i) => (
+                        <TableCell key={i}>
+                          <Skeleton className="h-3 w-full" />
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  ))
+                ) : table.getRowModel().rows?.length ? (
                   table.getRowModel().rows.map((row) => (
                     <TableRow
                       key={row.id}
@@ -106,10 +127,10 @@ const EbooksDataTable: React.FC<IEbooksDataTableProps> = ({
                 ) : (
                   <TableRow>
                     <TableCell
-                      colSpan={EbookColumn.length}
+                      colSpan={table.getAllColumns().length}
                       className="h-24 text-center"
                     >
-                      {isLoading ? "Loading..." : "No results."}
+                      No data available.
                     </TableCell>
                   </TableRow>
                 )}
@@ -121,8 +142,13 @@ const EbooksDataTable: React.FC<IEbooksDataTableProps> = ({
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="text-muted-foreground flex-1 text-sm">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+          {isLoading && <Skeleton className="h-3 w-10" />}
+          {!isLoading && (
+            <p>
+              {table.getFilteredSelectedRowModel().rows.length} of{" "}
+              {table.getFilteredRowModel().rows.length} row(s) selected.
+            </p>
+          )}
         </div>
         <div className="space-x-2">
           <Button

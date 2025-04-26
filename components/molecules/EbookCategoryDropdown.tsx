@@ -12,6 +12,7 @@ import {
 import { ChevronDownIcon } from "lucide-react";
 import { Button } from "../atoms/button";
 import { IEbookCategory } from "@/interfaces/ebook-category/ebook.category.interface";
+import { LoadingSpinner } from "../atoms/LoadingSpinner";
 
 interface IEbookCategoryDropdownProps {
   value?: IEbookCategory;
@@ -28,7 +29,7 @@ const EbookCategoryDropdown: React.FC<IEbookCategoryDropdownProps> = ({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="w-1/2">
-          {value ? (
+          {value !== undefined ? (
             <p>{value.name}</p>
           ) : (
             <div className="flex flex-row items-center space-x-2">
@@ -42,6 +43,7 @@ const EbookCategoryDropdown: React.FC<IEbookCategoryDropdownProps> = ({
         <DropdownMenuLabel>Ebook Category</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup
+          key={value?.id}
           value={value?.id}
           onValueChange={(selectedId) => {
             const selectedCategory = ebookCategories.find(
@@ -58,7 +60,7 @@ const EbookCategoryDropdown: React.FC<IEbookCategoryDropdownProps> = ({
                 {data.name}
               </DropdownMenuRadioItem>
             ))}
-          {isLoading && <p>Loading...</p>}
+          {isLoading && <LoadingSpinner />}
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

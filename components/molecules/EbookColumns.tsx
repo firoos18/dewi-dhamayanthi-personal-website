@@ -14,7 +14,17 @@ import {
 } from "@/components/atoms/dropdown-menu";
 import convertToJakartaTime from "@/utils/time-conversion/time-conversion";
 
-export const EbookColumn: ColumnDef<IEbook>[] = [
+interface IEbookColumnProps {
+  onViewCover: (ebook: IEbook) => void;
+  onViewDetails: (ebook: IEbook) => void;
+  onEditDetails: (ebook: IEbook) => void;
+}
+
+export const EbookColumn = ({
+  onViewCover,
+  onViewDetails,
+  onEditDetails,
+}: IEbookColumnProps): ColumnDef<IEbook>[] => [
   {
     id: "select",
     header: ({ table }) => (
@@ -158,7 +168,7 @@ export const EbookColumn: ColumnDef<IEbook>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original;
+      const ebook = row.original;
 
       return (
         <DropdownMenu>
@@ -171,15 +181,21 @@ export const EbookColumn: ColumnDef<IEbook>[] = [
           <DropdownMenuContent align="end" className="bg-[#F8F7F2]">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() => navigator.clipboard.writeText(ebook.id)}
             >
               Copy Ebook ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View cover image</DropdownMenuItem>
-            <DropdownMenuItem>View ebook details</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => onViewCover(ebook)}>
+              View cover image
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => onViewDetails(ebook)}>
+              View ebook details
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Edit ebook details</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => onEditDetails(ebook)}>
+              Edit ebook details
+            </DropdownMenuItem>
             <DropdownMenuItem className="text-red-600 focus:border-red-600 focus:bg-red-600/10 focus:text-red-600">
               Delete ebook details
             </DropdownMenuItem>

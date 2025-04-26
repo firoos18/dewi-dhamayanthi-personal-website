@@ -1,4 +1,7 @@
-import { IPaginatedResponse } from "@/interfaces/global/index.interface";
+import {
+  IBaseResponse,
+  IPaginatedResponse,
+} from "@/interfaces/global/index.interface";
 import satellite from "../satellite";
 import { IEbook } from "@/interfaces/ebook/ebook.interface";
 
@@ -16,6 +19,16 @@ export const getAllEbooks = async (
 
 export const addEbook = async (body: FormData) => {
   const res = await satellite.post<IPaginatedResponse>(`/ebook`, body, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+
+  return res.data;
+};
+
+export const updateBook = async (body: FormData, id: string) => {
+  const res = await satellite.put<IBaseResponse>(`/ebook/${id}`, body, {
     headers: {
       "Content-Type": "multipart/form-data",
     },

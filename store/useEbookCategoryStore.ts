@@ -29,8 +29,6 @@ const useEbookCategoryStore = create<EbookCategoryState & EbookCategoryActions>(
       try {
         const res = await getAllEbookCategories();
 
-        console.log(res);
-
         if (res.status && res.data) {
           set({ ebookCategories: res.data });
         } else {

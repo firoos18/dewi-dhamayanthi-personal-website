@@ -1,14 +1,40 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import SearchInput from "../atoms/SearchInput";
 import EbooksDataTable from "../molecules/EbooksDataTable";
 import useEbookStore from "@/store/useEbookStore";
 import { debounce } from "lodash";
 import AddEbookDialog from "../molecules/AddEbookDialog";
 import useEbookCategoryStore from "@/store/useEbookCategoryStore";
+import { IEbook } from "@/interfaces/ebook/ebook.interface";
+import ViewEbookCoverImageDialog from "../molecules/ViewEbookCoverImageDialog";
+import ViewEbookDetailsDialog from "../molecules/ViewEbookDetailsDialog";
 
 const EbookPage = () => {
+  const [isViewCoverDialogOpen, setIsViewCoverDialogOpen] =
+    useState<boolean>(false);
+  const [isViewDetailsDialogOpen, setIsViewDetailsDialogOpen] =
+    useState<boolean>(false);
+  const [isEditDetailsDialogOpen, setIsEditDetailsDialogOpen] =
+    useState<boolean>(false);
+  const [selectedEbook, setSelectedEbook] = useState<IEbook | null>(null);
+
+  const handleViewCover = (selectedEbook: IEbook | null) => {
+    setSelectedEbook(selectedEbook);
+    setIsViewCoverDialogOpen(true);
+  };
+
+  const handleViewDetails = (selectedEbook: IEbook | null) => {
+    setSelectedEbook(selectedEbook);
+    setIsViewDetailsDialogOpen(true);
+  };
+
+  const handleEditDetails = (selectedEbook: IEbook | null) => {
+    setSelectedEbook(selectedEbook);
+    setIsEditDetailsDialogOpen(true);
+  };
+
   const {
     ebooks,
     fetchEbooks,
@@ -75,7 +101,34 @@ const EbookPage = () => {
           canGoToNext={nextPage !== null}
           totalRecords={totalRecords}
           currentPage={currentPage}
+          onViewCover={handleViewCover}
+          onViewDetails={handleViewDetails}
+          onEditDetails={handleEditDetails}
         />
+
+        {selectedEbook && isViewCoverDialogOpen && (
+          <ViewEbookCoverImageDialog
+            ebook={selectedEbook}
+            isOpen={isViewCoverDialogOpen}
+            open={setIsViewCoverDialogOpen}
+          />
+        )}
+
+        {selectedEbook && isViewDetailsDialogOpen && (
+          <ViewEbookDetailsDialog
+            ebook={selectedEbook}
+            isOpen={isViewDetailsDialogOpen}
+            open={setIsViewDetailsDialogOpen}
+          />
+        )}
+
+        {selectedEbook && isEditDetailsDialogOpen && (
+          <AddEbookDialog
+            ebook={selectedEbook}
+            isOpen={isEditDetailsDialogOpen}
+            openEdit={setIsEditDetailsDialogOpen}
+          />
+        )}
       </div>
     </div>
   );
