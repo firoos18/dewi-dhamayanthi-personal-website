@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const TopBar = () => {
@@ -27,8 +28,12 @@ const TopBar = () => {
         <p>Dhayamanthi.</p>
       </div>
       <div className="mr-5 hidden flex-row space-x-8 font-semibold text-black lg:flex lg:text-lg">
-        <button>Blog</button>
-        <button>EBook</button>
+        <Link href={"blog/ebook"} className="self-center">
+          Blog
+        </Link>
+        <Link href={"blog/ebook"} className="self-center">
+          EBook
+        </Link>
         <button className="rounded-full border-2 border-black px-4 py-2">
           Book a Call
         </button>
