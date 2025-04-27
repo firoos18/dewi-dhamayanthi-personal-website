@@ -8,7 +8,11 @@ import {
 import { toast } from "react-toastify";
 import { create } from "zustand";
 import { getMe, postLogin, postRegister } from "@/services/auth/api";
-import { deleteToken, setToken } from "@/utils/cookies/cookies.data";
+import {
+  deleteToken,
+  setRefreshToken,
+  setToken,
+} from "@/utils/cookies/cookies.data";
 
 type AuthState = {
   isLoading: boolean;
@@ -39,7 +43,8 @@ const useAuthStore = create<AuthState & AuthActions>((set, get) => ({
     try {
       const res = await postLogin(body);
       if (res.status && res.data) {
-        setToken(res.data?.token);
+        await setToken(res.data?.accessToken);
+        await setRefreshToken(res.data?.refreshToken);
         toast.success("Login Success!");
       } else {
         set({ error: res.message });

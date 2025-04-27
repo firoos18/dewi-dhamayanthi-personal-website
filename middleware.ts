@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export default function middleware(req: NextRequest) {
   try {
     const { pathname } = req.nextUrl;
-    const token = req.cookies.get("token")?.value;
+    const token = req.cookies.get("accessToken")?.value;
 
     const isCmsRoute = pathname.startsWith("/cms");
     const isCmsLogin = pathname === "/cms/auth";

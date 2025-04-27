@@ -27,3 +27,9 @@ export const getMe = async () => {
 
   return res.data;
 };
+
+export const refreshToken = async () => {
+  const res = await satellite.post<IBaseResponse>("/auth/refresh");
+
+  return res.data;
+};

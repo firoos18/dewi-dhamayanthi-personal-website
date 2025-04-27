@@ -4,6 +4,7 @@ import axios from "axios";
 const satellite = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL_DEV,
   timeout: 20_000,
+  withCredentials: true,
 });
 
 satellite.interceptors.request.use(
