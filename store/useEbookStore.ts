@@ -5,8 +5,10 @@ import { create } from "zustand";
 
 type EbookState = {
   ebooks: IEbook[];
+  ebooksBlog: IEbook[];
   selectedEbook: IEbook | null;
   query: string;
+  categories: string[];
   isLoading: boolean;
   isAddLoading: boolean;
   isUpdateLoading: boolean;
@@ -19,22 +21,26 @@ type EbookState = {
 
 type EbookActions = {
   fetchEbooks: (page?: number) => Promise<void>;
+  fetchEbooksBlog: (page?: number) => Promise<void>;
   addEbook: (body: FormData) => Promise<void>;
   updateEbook: (body: FormData) => Promise<void>;
   setQuery: (query: string) => void;
   setPage: (page: number) => void;
+  setCategories: (categories: string[]) => void;
   setSelectedEbook: (ebook: IEbook) => void;
   reset: () => void;
 };
 
 const initialEbookState = {
   ebooks: [],
+  ebooksBlog: [],
   isLoading: false,
   isAddLoading: false,
   error: null,
   nextPage: 1,
   totalRecords: 0,
   query: "",
+  categories: [],
   currentPage: 0,
   pageSize: 5,
   isUpdateLoading: false,
@@ -49,6 +55,11 @@ const useEbookStore = create<EbookState & EbookActions>((set, get) => ({
     get().fetchEbooks();
   },
 
+  setCategories: (categories: string[]) => {
+    set({ categories, nextPage: 1, ebooks: [] });
+    get().fetchEbooks(1);
+  },
+
   setPage: (page: number) => {
     set({ currentPage: page });
     get().fetchEbooks(page);
@@ -59,14 +70,14 @@ const useEbookStore = create<EbookState & EbookActions>((set, get) => ({
   },
 
   fetchEbooks: async (page = get().currentPage) => {
-    const { query, pageSize } = get();
+    const { query, pageSize, categories } = get();
 
     if (get().isLoading) return;
 
     set({ isLoading: true });
 
     try {
-      const res = await getAllEbooks(page, pageSize, query);
+      const res = await getAllEbooks(page, pageSize, query, categories);
 
       if (res.status && res.data) {
         set({
@@ -74,6 +85,35 @@ const useEbookStore = create<EbookState & EbookActions>((set, get) => ({
           currentPage: res.pagination.current_page,
           totalRecords: res.pagination.total_records,
           nextPage: res.pagination.next_page,
+        });
+      } else {
+        set({ error: res.message });
+      }
+    } catch {
+      toast.error(get().error);
+    } finally {
+      set({ isLoading: false });
+    }
+  },
+
+  fetchEbooksBlog: async () => {
+    const { query, categories, nextPage, ebooks } = get();
+
+    if (!nextPage || get().isLoading) return;
+
+    set({ isLoading: true });
+
+    try {
+      const res = await getAllEbooks(nextPage, 5, query, categories);
+
+      if (res.status && res.data) {
+        const newEbooks = res.data ?? [];
+        const newPagination = res.pagination;
+
+        set({
+          ebooks: nextPage === 1 ? newEbooks : [...ebooks, ...newEbooks],
+          nextPage: newPagination?.next_page ?? null,
+          totalRecords: newPagination?.total_records ?? 0,
         });
       } else {
         set({ error: res.message });

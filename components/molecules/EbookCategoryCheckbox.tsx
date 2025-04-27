@@ -15,6 +15,7 @@ import {
   FormControl,
 } from "../atoms/form";
 import { Checkbox } from "../atoms/checkbox";
+import useEbookStore from "@/store/useEbookStore";
 
 const FormSchema = z.object({
   categories: z.array(z.string()),
@@ -23,6 +24,7 @@ const FormSchema = z.object({
 const EbookCategoryCheckbox = () => {
   const { fetchEbookCategories, ebookCategories, isLoading } =
     useEbookCategoryStore();
+  const { setCategories } = useEbookStore();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -34,7 +36,7 @@ const EbookCategoryCheckbox = () => {
   });
 
   const onCheckboxFormChange = () => {
-    console.log(form.getValues());
+    setCategories(form.getValues().categories);
   };
 
   useEffect(() => {
@@ -69,16 +71,16 @@ const EbookCategoryCheckbox = () => {
                             <FormControl>
                               <Checkbox
                                 className="mt-[7px]"
-                                checked={field.value?.includes(category.id)}
+                                checked={field.value?.includes(category.name)}
                                 onCheckedChange={(checked) => {
                                   return checked
                                     ? field.onChange([
                                         ...field.value,
-                                        category.id,
+                                        category.name,
                                       ])
                                     : field.onChange(
                                         field.value?.filter(
-                                          (value) => value !== category.id,
+                                          (value) => value !== category.name,
                                         ),
                                       );
                                 }}
