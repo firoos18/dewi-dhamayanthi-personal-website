@@ -27,7 +27,7 @@ const TopBar = () => {
         <p>Dewi</p>
         <p>Dhayamanthi.</p>
       </Link>
-      <div className="mr-5 hidden flex-row space-x-8 font-semibold text-black lg:flex lg:text-lg">
+      <div className="mr-5 hidden flex-row space-x-8 font-semibold text-black lg:flex lg:text-base">
         <Link href={"/blog/post"} className="self-center">
           Post
         </Link>

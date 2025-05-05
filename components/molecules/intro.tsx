@@ -96,10 +96,10 @@ const Intro = () => {
               support your business!
             </p>
             <div className="mt-8 flex flex-row space-x-8">
-              <button className="rounded-full border-4 border-black px-8 py-4 text-sm font-semibold">
+              <button className="rounded-full border-4 border-black px-6 py-3 text-sm font-semibold">
                 <p>Book a Call</p>
               </button>
-              <button className="rounded-full bg-black px-8 py-4 text-sm font-semibold text-white">
+              <button className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white">
                 <p>Contact Me</p>
               </button>
             </div>

@@ -151,7 +151,7 @@ const AddEbookDialog: React.FC<IAddEbookDialogProps> = ({
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)}>
           <ScrollArea>
-            <div className="mt-4 flex max-h-[500px] flex-col space-y-4 px-3">
+            <div className="mt-4 flex max-h-[60vh] flex-col space-y-4 px-3">
               <Input placeholder="Title" {...register("title")} />
               {errors.title && (
                 <p className="text-sm text-red-500">{errors.title.message}</p>

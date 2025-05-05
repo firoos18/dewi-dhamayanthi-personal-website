@@ -28,13 +28,15 @@ const ViewEbookDetailsDialog: React.FC<IViewEbookDetailsDialogProps> = ({
       <DialogOverlay />
       <DialogContent className="max-w-[600px]">
         <DialogHeader>
-          <DialogTitle>{ebook.title} Details</DialogTitle>
+          <DialogTitle className="max-w-[90%]">
+            {ebook.title} Details
+          </DialogTitle>
           <DialogDescription>Details of current ebook</DialogDescription>
         </DialogHeader>
         <ScrollArea>
-          <div className="mt-4 flex max-h-[500px] flex-col space-y-4 px-3">
-            <div className="flex flex-row">
-              <div className="relative h-[100px] w-[300px]">
+          <div className="mt-4 flex max-h-[60vh] flex-col space-y-4 px-3">
+            <div className="mb-3 flex flex-row">
+              <div className="relative h-[150px] w-[300px]">
                 {ebook.cover && (
                   <Image
                     src={ebook.cover}
@@ -55,10 +57,10 @@ const ViewEbookDetailsDialog: React.FC<IViewEbookDetailsDialogProps> = ({
                 >
                   {ebook.status}
                 </div>
-                <p className="mt-2 text-lg font-medium leading-tight text-black">
+                <p className="mt-4 text-lg font-medium leading-tight text-black">
                   {ebook.title}
                 </p>
-                <p className="mt-1 text-xs font-semibold text-[#B1C0C0]">
+                <p className="mt-2 text-xs font-semibold text-[#B1C0C0]">
                   {ebook.author}{" "}
                   {ebook.published_at &&
                     convertToJakartaTime(ebook.published_at)}

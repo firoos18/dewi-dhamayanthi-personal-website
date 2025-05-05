@@ -17,28 +17,26 @@ const ClientReviewsLg = () => {
           business!
         </p>
         <div className="mt-8 flex w-full flex-row justify-center lg:mt-10">
-          <button className="flex flex-row items-center justify-center rounded-full bg-primary px-5 py-4 font-semibold text-secondary">
+          <button className="flex flex-row items-center justify-center rounded-full bg-primary px-4 py-3 font-medium text-secondary">
             <Image
               src={"/email-push.png"}
               alt="email-placeholder"
-              width={24}
-              height={24}
-              className="lg:h-8 lg:w-8"
+              width={28}
+              height={28}
               priority
             />
-            <p className="ml-3 text-xs sm:text-base lg:text-xl">Contact Me</p>
+            <p className="ml-3 text-xs md:text-base">Contact Me</p>
           </button>
           <div className="mx-4" />
-          <button className="flex flex-row items-center justify-center rounded-full bg-primary px-5 py-4 font-semibold text-secondary">
+          <button className="flex flex-row items-center justify-center rounded-full bg-primary px-4 py-3 font-medium text-secondary">
             <Image
               src={"/phone-telephone.png"}
               alt="email-placeholder"
-              width={24}
-              height={24}
-              className="lg:h-8 lg:w-8"
+              width={28}
+              height={28}
               priority
             />
-            <p className="ml-3 text-xs sm:text-base lg:text-xl">Book a Call</p>
+            <p className="ml-3 text-xs md:text-base">Book a Call</p>
           </button>
         </div>
       </div>

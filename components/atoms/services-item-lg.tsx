@@ -16,7 +16,13 @@ const ServicesItemLg = ({ image, title, description }: ServicesItemLgProps) => {
   return (
     <div className="flex h-fit w-full flex-row justify-between space-x-6 text-3xl font-semibold text-white lg:space-x-10">
       <div className="relative size-10 lg:size-14">
-        <Image src={image} alt={title} fill priority />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          priority
+          style={{ objectFit: "contain" }}
+        />
       </div>
       <div className="flex w-full flex-col space-y-3">
         <p className="text-start text-base font-semibold text-black lg:text-lg">
