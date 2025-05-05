@@ -1,18 +1,40 @@
 "use client";
 
 import useEbookStore from "@/store/useEbookStore";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import BlogEbookCard from "../molecules/BlogEbookCard";
 import { ScrollArea } from "../atoms/scroll-area";
 import { IEbook } from "@/interfaces/ebook/ebook.interface";
 import ViewEbookDetailsDialog from "../molecules/ViewEbookDetailsDialog";
+import SearchInput from "../atoms/SearchInput";
+import { debounce } from "lodash";
 
 const BlogEbookPage = () => {
   const [selectedEbook, setSelectedEbook] = useState<IEbook>();
   const [isViewDetailsDialogOpen, setIsViewDetailsDialogOpen] =
     useState<boolean>(false);
-  const { fetchEbooksBlog, ebooks, isLoading, nextPage } = useEbookStore();
+  const { fetchEbooksBlog, ebooks, isLoading, nextPage, setBlogQuery } =
+    useEbookStore();
   const loaderRef = useRef<HTMLDivElement | null>(null);
+
+  const debouncedSetQuery = useMemo(() => {
+    return debounce((val: string) => {
+      setBlogQuery(val);
+    }, 400);
+  }, [setBlogQuery]);
+
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      debouncedSetQuery(e.target.value);
+    },
+    [debouncedSetQuery],
+  );
 
   const handleViewEbookDetails = (ebook: IEbook) => {
     if (ebook) {
@@ -52,6 +74,12 @@ const BlogEbookPage = () => {
 
   return (
     <div className="flex h-[calc(100vh-100px)] w-full flex-col pt-6">
+      <div className="mb-2 pl-4 pr-9">
+        <SearchInput
+          placeholder="Search Ebooks"
+          onChange={handleSearchChange}
+        />
+      </div>
       <ScrollArea className="h-full w-full">
         <div className="flex w-full flex-wrap justify-start gap-4 p-4">
           {ebooks.map((ebook) => (

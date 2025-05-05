@@ -25,6 +25,7 @@ type EbookActions = {
   addEbook: (body: FormData) => Promise<void>;
   updateEbook: (body: FormData) => Promise<void>;
   setQuery: (query: string) => void;
+  setBlogQuery: (query: string) => void;
   setPage: (page: number) => void;
   setCategories: (categories: string[]) => void;
   setSelectedEbook: (ebook: IEbook) => void;
@@ -53,6 +54,11 @@ const useEbookStore = create<EbookState & EbookActions>((set, get) => ({
   setQuery: (query: string) => {
     set({ query, nextPage: 1, ebooks: [] });
     get().fetchEbooks();
+  },
+
+  setBlogQuery: (query: string) => {
+    set({ query, nextPage: 1, ebooks: [] });
+    get().fetchEbooksBlog();
   },
 
   setCategories: (categories: string[]) => {
