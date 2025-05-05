@@ -26,7 +26,7 @@ const BlogEbookPage = () => {
   const debouncedSetQuery = useMemo(() => {
     return debounce((val: string) => {
       setBlogQuery(val);
-    }, 400);
+    }, 800);
   }, [setBlogQuery]);
 
   const handleSearchChange = useCallback(
