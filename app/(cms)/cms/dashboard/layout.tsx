@@ -1,4 +1,5 @@
 import SidebarMenu from "@/components/organisms/SidebarMenu";
+import TokenWatcher from "@/components/organisms/TokenWatcher";
 import React from "react";
 
 interface ICmsLayoutProps {
@@ -8,6 +9,7 @@ interface ICmsLayoutProps {
 const Layout: React.FC<ICmsLayoutProps> = ({ children }) => {
   return (
     <div className="flex h-screen w-full flex-row">
+      <TokenWatcher />
       <div className="w-1/6">
         <SidebarMenu />
       </div>

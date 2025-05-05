@@ -29,7 +29,10 @@ export const getMe = async () => {
 };
 
 export const refreshToken = async () => {
-  const res = await satellite.post<IBaseResponse>("/auth/refresh");
+  const res =
+    await satellite.post<IBaseResponse<IUserLoginResponseBody>>(
+      "/auth/refresh",
+    );
 
   return res.data;
 };
