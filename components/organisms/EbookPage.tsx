@@ -10,6 +10,7 @@ import useEbookCategoryStore from "@/store/useEbookCategoryStore";
 import { IEbook } from "@/interfaces/ebook/ebook.interface";
 import ViewEbookCoverImageDialog from "../molecules/ViewEbookCoverImageDialog";
 import ViewEbookDetailsDialog from "../molecules/ViewEbookDetailsDialog";
+import AddEbookCategoryDialog from "../molecules/AddEbookCategoryDialog";
 
 const EbookPage = () => {
   const [isViewCoverDialogOpen, setIsViewCoverDialogOpen] =
@@ -86,7 +87,10 @@ const EbookPage = () => {
     <div className="min-h-screen w-full px-6 py-8">
       <div className="flex w-full flex-row justify-between">
         <p className="text-3xl font-semibold text-primary">E-Books</p>
-        <AddEbookDialog />
+        <div className="flex flex-row space-x-3">
+          <AddEbookCategoryDialog />
+          <AddEbookDialog />
+        </div>
       </div>
       <div className="mt-10">
         <SearchInput placeholder="Find E-Books" onChange={handleSearchChange} />

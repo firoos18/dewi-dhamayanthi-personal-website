@@ -39,3 +39,7 @@ export const addEbookSchema = z.object({
   }),
   cover: z.any().nullable(),
 });
+
+export const addEbookCategorySchema = z.object({
+  name: z.string().trim().min(1, "Ebook Category can't be empty!"),
+});

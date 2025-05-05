@@ -13,6 +13,8 @@ import { ChevronDownIcon } from "lucide-react";
 import { Button } from "../atoms/button";
 import { IEbookCategory } from "@/interfaces/ebook-category/ebook.category.interface";
 import { LoadingSpinner } from "../atoms/LoadingSpinner";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { ScrollBar } from "../atoms/scroll-area";
 
 interface IEbookCategoryDropdownProps {
   value?: IEbookCategory;
@@ -39,29 +41,32 @@ const EbookCategoryDropdown: React.FC<IEbookCategoryDropdownProps> = ({
           )}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="max-h-[150px] w-56">
         <DropdownMenuLabel>Ebook Category</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup
-          key={value?.id}
-          value={value?.id}
-          onValueChange={(selectedId) => {
-            const selectedCategory = ebookCategories.find(
-              (cat) => cat.id === selectedId,
-            );
-            if (selectedCategory) {
-              onChange(selectedCategory);
-            }
-          }}
-        >
-          {!isLoading &&
-            ebookCategories.map((data) => (
-              <DropdownMenuRadioItem key={data.id} value={data.id}>
-                {data.name}
-              </DropdownMenuRadioItem>
-            ))}
-          {isLoading && <LoadingSpinner />}
-        </DropdownMenuRadioGroup>
+        <ScrollArea>
+          <DropdownMenuRadioGroup
+            key={value?.id}
+            value={value?.id}
+            onValueChange={(selectedId) => {
+              const selectedCategory = ebookCategories.find(
+                (cat) => cat.id === selectedId,
+              );
+              if (selectedCategory) {
+                onChange(selectedCategory);
+              }
+            }}
+          >
+            {!isLoading &&
+              ebookCategories.map((data) => (
+                <DropdownMenuRadioItem key={data.id} value={data.id}>
+                  {data.name}
+                </DropdownMenuRadioItem>
+              ))}
+            {isLoading && <LoadingSpinner />}
+          </DropdownMenuRadioGroup>
+          <ScrollBar />
+        </ScrollArea>
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -1,5 +1,11 @@
-import { IEbookCategory } from "@/interfaces/ebook-category/ebook.category.interface";
-import { getAllEbookCategories } from "@/services/ebook-category/api";
+import {
+  IAddEbookCategory,
+  IEbookCategory,
+} from "@/interfaces/ebook-category/ebook.category.interface";
+import {
+  getAllEbookCategories,
+  postEbookCategory,
+} from "@/services/ebook-category/api";
 import { toast } from "react-toastify";
 import { create } from "zustand";
 
@@ -11,6 +17,7 @@ type EbookCategoryState = {
 
 type EbookCategoryActions = {
   fetchEbookCategories: () => Promise<void>;
+  addEbookCategory: (body: IAddEbookCategory) => Promise<void>;
 };
 
 const initialEbookCategoryState = {
@@ -39,6 +46,26 @@ const useEbookCategoryStore = create<EbookCategoryState & EbookCategoryActions>(
       } finally {
         set({ isLoading: false });
       }
+    },
+
+    addEbookCategory: async (body) => {
+      set({ isLoading: true, error: null });
+
+      try {
+        const res = await postEbookCategory(body);
+
+        if (res.status) {
+          toast.success(res.message);
+        } else {
+          set({ error: res.message });
+        }
+      } catch {
+        toast.error(get().error);
+      } finally {
+        set({ isLoading: false });
+      }
+
+      get().fetchEbookCategories();
     },
   }),
 );
