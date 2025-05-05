@@ -63,7 +63,7 @@ const useEbookStore = create<EbookState & EbookActions>((set, get) => ({
 
   setCategories: (categories: string[]) => {
     set({ categories, nextPage: 1, ebooks: [] });
-    get().fetchEbooks(1);
+    get().fetchEbooksBlog(1);
   },
 
   setPage: (page: number) => {
