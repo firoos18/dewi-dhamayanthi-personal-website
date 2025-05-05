@@ -77,7 +77,7 @@ const useEbookStore = create<EbookState & EbookActions>((set, get) => ({
     set({ isLoading: true });
 
     try {
-      const res = await getAllEbooks(page, pageSize, query, categories);
+      const res = await getAllEbooks(page, pageSize, query, categories, "");
 
       if (res.status && res.data) {
         set({
@@ -104,7 +104,13 @@ const useEbookStore = create<EbookState & EbookActions>((set, get) => ({
     set({ isLoading: true });
 
     try {
-      const res = await getAllEbooks(nextPage, 5, query, categories);
+      const res = await getAllEbooks(
+        nextPage,
+        5,
+        query,
+        categories,
+        "PUBLISHED",
+      );
 
       if (res.status && res.data) {
         const newEbooks = res.data ?? [];

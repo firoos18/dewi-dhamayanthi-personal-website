@@ -10,6 +10,7 @@ export const getAllEbooks = async (
   pageSize: number,
   query: string,
   categories: string[],
+  status: string,
 ) => {
   const categoryParams =
     categories.length > 0
@@ -17,7 +18,7 @@ export const getAllEbooks = async (
       : "";
 
   const res = await satellite.get<IPaginatedResponse<IEbook[]>>(
-    `/ebook/?page=${page}&pageSize=${pageSize}&query=${encodeURIComponent(query)}${categoryParams ? `&${categoryParams}` : ""}`,
+    `/ebook/?page=${page}&pageSize=${pageSize}&query=${encodeURIComponent(query)}${categoryParams ? `&${categoryParams}` : ""}&status=${encodeURIComponent(status)}`,
   );
 
   return res.data;
