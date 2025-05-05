@@ -2,7 +2,7 @@ import { getToken } from "@/utils/cookies/cookies.data";
 import axios from "axios";
 
 const satellite = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL_DEV,
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   timeout: 20_000,
   withCredentials: true,
 });
