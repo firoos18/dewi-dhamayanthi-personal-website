@@ -49,9 +49,7 @@ export const EbookColumn = ({
   },
   {
     accessorKey: "cover",
-    header: () => (
-      <div className="w-[50px] text-right font-semibold">Cover</div>
-    ),
+    header: () => <div className="w-[50px] font-semibold">Cover</div>,
     cell: ({ row }) => {
       const cover = row.getValue("cover");
 
@@ -74,26 +72,26 @@ export const EbookColumn = ({
   {
     accessorKey: "title",
     header: () => (
-      <div className="max-w-[200px] text-center font-semibold">Title</div>
+      <div className="max-w-[150px] text-center font-semibold">Title</div>
     ),
     cell: ({ row }) => (
-      <div className="max-w-[200px] text-center capitalize">
+      <div className="max-w-[150px] text-center capitalize">
         {row.getValue("title")}
       </div>
     ),
-    size: 200,
+    size: 150,
   },
   {
     accessorKey: "author",
     header: () => (
-      <div className="max-w-[300px] text-center font-semibold">Author</div>
+      <div className="max-w-[100px] text-center font-semibold">Author</div>
     ),
     cell: ({ row }) => (
-      <div className="max-w-[300px] text-center capitalize">
+      <div className="max-w-[100px] text-center capitalize">
         {row.getValue("author")}
       </div>
     ),
-    size: 300,
+    size: 100,
   },
   {
     accessorKey: "status",

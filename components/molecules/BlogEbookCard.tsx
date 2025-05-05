@@ -6,11 +6,19 @@ import { Skeleton } from "../atoms/skeleton";
 interface IBlogEbookCardProps {
   ebook?: IEbook;
   isLoading: boolean;
+  onSelectEbook?: (ebook: IEbook) => void;
 }
 
-const BlogEbookCard: React.FC<IBlogEbookCardProps> = ({ ebook, isLoading }) => {
+const BlogEbookCard: React.FC<IBlogEbookCardProps> = ({
+  ebook,
+  isLoading,
+  onSelectEbook,
+}) => {
   return (
-    <div className="flex h-[275px] w-[230px] flex-col overflow-hidden rounded-lg bg-[#B1C0C0]/30">
+    <div
+      className="flex h-[275px] w-[230px] flex-col overflow-hidden rounded-lg bg-[#B1C0C0]/30 hover:cursor-pointer hover:shadow-lg"
+      onClick={onSelectEbook && ebook && (() => onSelectEbook(ebook))}
+    >
       <div className="relative flex h-[150px] w-full items-center justify-center">
         {ebook?.cover && !isLoading && (
           <Image

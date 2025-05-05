@@ -1,13 +1,25 @@
 "use client";
 
 import useEbookStore from "@/store/useEbookStore";
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import BlogEbookCard from "../molecules/BlogEbookCard";
 import { ScrollArea } from "../atoms/scroll-area";
+import { IEbook } from "@/interfaces/ebook/ebook.interface";
+import ViewEbookDetailsDialog from "../molecules/ViewEbookDetailsDialog";
 
 const BlogEbookPage = () => {
+  const [selectedEbook, setSelectedEbook] = useState<IEbook>();
+  const [isViewDetailsDialogOpen, setIsViewDetailsDialogOpen] =
+    useState<boolean>(false);
   const { fetchEbooksBlog, ebooks, isLoading, nextPage } = useEbookStore();
   const loaderRef = useRef<HTMLDivElement | null>(null);
+
+  const handleViewEbookDetails = (ebook: IEbook) => {
+    if (ebook) {
+      setSelectedEbook(ebook);
+      setIsViewDetailsDialogOpen(true);
+    }
+  };
 
   useEffect(() => {
     fetchEbooksBlog(1);
@@ -43,7 +55,12 @@ const BlogEbookPage = () => {
       <ScrollArea className="h-full w-full">
         <div className="flex w-full flex-wrap justify-start gap-4 p-4">
           {ebooks.map((ebook) => (
-            <BlogEbookCard ebook={ebook} key={ebook.id} isLoading={false} />
+            <BlogEbookCard
+              ebook={ebook}
+              key={ebook.id}
+              isLoading={false}
+              onSelectEbook={handleViewEbookDetails}
+            />
           ))}
 
           {isLoading &&
@@ -56,6 +73,13 @@ const BlogEbookPage = () => {
           <div ref={loaderRef} className="h-10 w-full"></div>
         </div>
       </ScrollArea>
+      {selectedEbook && isViewDetailsDialogOpen && (
+        <ViewEbookDetailsDialog
+          ebook={selectedEbook}
+          isOpen={isViewDetailsDialogOpen}
+          open={setIsViewDetailsDialogOpen}
+        />
+      )}
     </div>
   );
 };
